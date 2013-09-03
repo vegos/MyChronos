@@ -1,0 +1,122 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void check_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 31 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void display_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 88 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_am_pm_symbol() (1 times)
+	switch_seg() (4 times)
+	int_to_array() (3 times)
+	display_chars() (3 times)
+	convert_hour_to_12H_format() (1 times)
+	display_symbol() (5 times)
+
+extern void mx_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 102 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	set_value() (2 times)
+	display_symbol() (1 times)
+	display_chars() (2 times)
+	int_to_array() (2 times)
+	clear_display_all() (1 times)
+
+extern void reset_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void stop_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	stop_buzzer() (1 times)
+
+extern void sx_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 44 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+
+These functions may be recursive:
+	display_alarm()
+	mx_alarm()
+	stop_alarm()
+
+These external functions are called but not defined here:
+	stop_buzzer()
+	clear_display_all()
+	set_value()
+	display_symbol()
+	convert_hour_to_12H_format()
+	display_chars()
+	int_to_array()
+	switch_seg()
+	display_am_pm_symbol()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void sx_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 44 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void stop_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 102 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 88 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void check_alarm() is called from 0 sites in this file.
+    It appears to be inlineable (size = 31 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

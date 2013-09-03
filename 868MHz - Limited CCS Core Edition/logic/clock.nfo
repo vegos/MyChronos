@@ -1,0 +1,156 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void clock_tick() is called from 0 sites in this file.
+    It appears to be inlineable (size = 66 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	add_day() (1 times)
+
+extern unsigned char convert_hour_to_12H_format() is called from 2 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void display_selection_Timeformat1() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern void display_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 198 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_am_pm_symbol() (2 times)
+	int_to_array() (8 times)
+	display_chars() (8 times)
+	convert_hour_to_12H_format() (2 times)
+	switch_seg() (11 times)
+	display_symbol() (4 times)
+
+extern unsigned char is_hour_am() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void mx_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 202 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Timer0_Start() (1 times)
+	Timer0_Stop() (1 times)
+	display_chars() (3 times)
+	int_to_array() (3 times)
+	set_value() (4 times)
+	display_symbol() (5 times)
+	clear_display() (1 times)
+	clear_display_all() (1 times)
+
+extern void reset_clock() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void sx_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+
+These functions may be recursive:
+	clock_tick()
+	display_selection_Timeformat1()
+	display_time()
+	mx_time()
+
+These external functions are called but not defined here:
+	clear_display_all()
+	clear_display()
+	set_value()
+	Timer0_Stop()
+	Timer0_Start()
+	display_symbol()
+	switch_seg()
+	int_to_array()
+	display_am_pm_symbol()
+	display_chars()
+	add_day()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void sx_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_clock() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 202 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char is_hour_am() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char convert_hour_to_12H_format() is called from 2 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_time() is called from 0 sites in this file.
+    It appears to be inlineable (size = 198 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	convert_hour_to_12H_format() (2 times)
+
+==============================================================================
+
+extern void display_selection_Timeformat1() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void clock_tick() is called from 0 sites in this file.
+    It appears to be inlineable (size = 66 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

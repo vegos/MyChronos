@@ -1,0 +1,117 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void add_day() is called from 0 sites in this file.
+    It appears to be inlineable (size = 50 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	get_numberOfDays() (1 times)
+
+extern void display_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 99 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (2 times)
+	switch_seg() (7 times)
+	display_chars() (5 times)
+	int_to_array() (3 times)
+
+extern unsigned char get_numberOfDays() is called from 2 sites in this file.
+    It appears to be inlineable (size = 64 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void mx_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 197 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	get_numberOfDays() (1 times)
+	set_value() (5 times)
+	display_symbol() (1 times)
+	display_chars() (4 times)
+	int_to_array() (4 times)
+	clear_display_all() (1 times)
+
+extern void reset_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void sx_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+
+These functions may be recursive:
+	display_date()
+	mx_date()
+
+These external functions are called but not defined here:
+	clear_display_all()
+	set_value()
+	int_to_array()
+	display_chars()
+	switch_seg()
+	display_symbol()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void sx_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char get_numberOfDays() is called from 2 sites in this file.
+    It appears to be inlineable (size = 64 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 197 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	get_numberOfDays() (1 times)
+
+==============================================================================
+
+extern void display_date() is called from 0 sites in this file.
+    It appears to be inlineable (size = 99 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void add_day() is called from 0 sites in this file.
+    It appears to be inlineable (size = 50 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	get_numberOfDays() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

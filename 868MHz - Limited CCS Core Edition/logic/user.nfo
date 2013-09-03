@@ -1,0 +1,59 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void dummy() is called from 0 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void set_value() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	idle_loop() (1 times)
+	 ? () (1 times)
+	button_repeat_off() (1 times)
+	display_symbol() (6 times)
+	set_blink_rate() (2 times)
+	button_repeat_on() (1 times)
+	stop_buzzer() (1 times)
+	clear_blink_mem() (2 times)
+
+
+These functions may be recursive:
+	set_value()
+
+These external functions are called but not defined here:
+	clear_blink_mem()
+	stop_buzzer()
+	button_repeat_on()
+	set_blink_rate()
+	display_symbol()
+	button_repeat_off()
+	 ? ()
+	idle_loop()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void set_value() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void dummy() is called from 0 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

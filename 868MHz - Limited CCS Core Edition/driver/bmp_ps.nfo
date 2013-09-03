@@ -1,0 +1,138 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void bmp_ps_get_cal_param() is called from 1 sites in this file.
+    It appears to be inlineable (size = 56 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (11 times)
+
+extern unsigned long bmp_ps_get_pa() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (1 times)
+
+extern unsigned bmp_ps_get_temp() is called from 0 sites in this file.
+    It appears to be inlineable (size = 55 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (1 times)
+
+extern void bmp_ps_init() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_get_cal_param() (1 times)
+	bmp_ps_read_register() (1 times)
+	ps_init() (1 times)
+
+extern unsigned bmp_ps_read_register() is called from 14 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_read_register() (1 times)
+
+extern void bmp_ps_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 4 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_write_register() (1 times)
+
+extern void bmp_ps_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char bmp_ps_write_register() is called from 1 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_write_register() (1 times)
+
+
+These functions may be recursive:
+	bmp_ps_get_pa()
+	bmp_ps_get_temp()
+	bmp_ps_init()
+	bmp_ps_get_cal_param()
+	bmp_ps_read_register()
+	bmp_ps_start()
+	bmp_ps_write_register()
+
+These external functions are called but not defined here:
+	ps_write_register()
+	ps_read_register()
+	ps_init()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern unsigned char bmp_ps_write_register() is called from 1 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_ps_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_ps_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 4 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_write_register() (1 times)
+
+==============================================================================
+
+extern unsigned bmp_ps_read_register() is called from 14 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_ps_get_cal_param() is called from 1 sites in this file.
+    It appears to be inlineable (size = 56 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (11 times)
+
+==============================================================================
+
+extern void bmp_ps_init() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (1 times)
+	bmp_ps_get_cal_param() (1 times)
+
+==============================================================================
+
+extern unsigned bmp_ps_get_temp() is called from 0 sites in this file.
+    It appears to be inlineable (size = 55 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (1 times)
+
+==============================================================================
+
+extern unsigned long bmp_ps_get_pa() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_ps_read_register() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

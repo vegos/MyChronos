@@ -1,0 +1,121 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void nwk_getJoinToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern enum smplStatus nwk_join() is called from 0 sites in this file.
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	nwk_setAPAddress() (1 times)
+	nwk_setLinkToken() (1 times)
+	memcpy() (1 times)
+	MRFI_Sleep() (1 times)
+	MRFI_RxIdle() (1 times)
+	MRFI_ReplyDelay() (1 times)
+	MRFI_RxOn() (1 times)
+	MRFI_WakeUp() (1 times)
+	SMPL_Ioctl() (2 times)
+	nwk_getProtocolVersion() (1 times)
+	nwk_putNumObjectIntoMsg() (1 times)
+	nwk_getBCastAddress() (1 times)
+	MRFI_GetRadioState() (1 times)
+
+extern void nwk_joinInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 15 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	MRFI_RandomByte() (1 times)
+
+extern enum fhStatus nwk_processJoin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 15 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	MRFI_PostKillSem() (1 times)
+	nwk_isValidReply() (1 times)
+
+extern void nwk_setJoinToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+Address of global variable is never taken:
+	static unsigned char (*spCallback)()
+
+
+
+These functions may be recursive:
+	nwk_join()
+	nwk_joinInit()
+	nwk_processJoin()
+
+These external functions are called but not defined here:
+	memcpy()
+	nwk_isValidReply()
+	MRFI_PostKillSem()
+	MRFI_RandomByte()
+	MRFI_GetRadioState()
+	nwk_getBCastAddress()
+	nwk_putNumObjectIntoMsg()
+	nwk_getProtocolVersion()
+	SMPL_Ioctl()
+	MRFI_WakeUp()
+	MRFI_RxOn()
+	MRFI_ReplyDelay()
+	MRFI_RxIdle()
+	MRFI_Sleep()
+	nwk_setLinkToken()
+	nwk_setAPAddress()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void nwk_setJoinToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum fhStatus nwk_processJoin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 15 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void nwk_joinInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 15 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_join() is called from 0 sites in this file.
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void nwk_getJoinToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

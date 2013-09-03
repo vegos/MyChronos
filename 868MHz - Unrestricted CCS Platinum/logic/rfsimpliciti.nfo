@@ -1,0 +1,264 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void display_ctrl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern void display_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern void display_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern unsigned char is_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void reset_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void simpliciti_get_ed_data_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 120 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_time() (1 times)
+	bmp_as_get_data() (1 times)
+	cma_as_get_data() (1 times)
+	Timer0_A4_Delay() (2 times)
+
+extern void simpliciti_sync_decode_ap_cmd_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 207 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern void simpliciti_sync_get_data_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 183 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void start_simpliciti_sync() is called from 1 sites in this file.
+    It appears to be inlineable (size = 66 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	close_radio() (1 times)
+	simpliciti_main_sync() (1 times)
+	simpliciti_link() (1 times)
+	open_radio() (1 times)
+	Timer0_A4_Delay() (2 times)
+	display_symbol() (6 times)
+	temperature_measurement() (1 times)
+	stop_altitude_measurement() (1 times)
+	start_altitude_measurement() (1 times)
+	bmp_as_stop() (1 times)
+	cma_as_stop() (1 times)
+	 ? () (1 times)
+	clear_line() (1 times)
+
+extern void start_simpliciti_tx_only() is called from 2 sites in this file.
+    It appears to be inlineable (size = 108 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	close_radio() (1 times)
+	bmp_as_stop() (1 times)
+	cma_as_stop() (1 times)
+	simpliciti_main_tx_only() (1 times)
+	bmp_as_start() (1 times)
+	cma_as_start() (1 times)
+	simpliciti_link() (1 times)
+	open_radio() (1 times)
+	Timer0_A4_Delay() (2 times)
+	display_symbol() (6 times)
+	display_time() (2 times)
+	 ? () (1 times)
+	clear_line() (2 times)
+
+extern void sx_ctrl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_tx_only() (1 times)
+	is_bluerobin() (1 times)
+
+extern void sx_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_tx_only() (1 times)
+	is_bluerobin() (1 times)
+
+extern void sx_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_sync() (1 times)
+	is_bluerobin() (1 times)
+
+Address of global variable is never taken:
+	static unsigned char packet_counter$1
+
+
+
+These functions may be recursive:
+	display_ctrl()
+	display_rf()
+	display_sync()
+	simpliciti_get_ed_data_callback()
+	simpliciti_sync_decode_ap_cmd_callback()
+	sx_ctrl()
+	sx_rf()
+	start_simpliciti_tx_only()
+	sx_sync()
+	start_simpliciti_sync()
+
+These external functions are called but not defined here:
+	is_bluerobin()
+	cma_as_start()
+	bmp_as_start()
+	simpliciti_main_tx_only()
+	clear_line()
+	 ? ()
+	cma_as_stop()
+	bmp_as_stop()
+	start_altitude_measurement()
+	stop_altitude_measurement()
+	temperature_measurement()
+	display_symbol()
+	open_radio()
+	simpliciti_link()
+	simpliciti_main_sync()
+	close_radio()
+	Timer0_A4_Delay()
+	cma_as_get_data()
+	bmp_as_get_data()
+	display_time()
+	display_chars()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void start_simpliciti_sync() is called from 1 sites in this file.
+    It appears to be inlineable (size = 66 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void sx_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_sync() (1 times)
+
+==============================================================================
+
+extern void start_simpliciti_tx_only() is called from 2 sites in this file.
+    It appears to be inlineable (size = 108 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void sx_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_tx_only() (1 times)
+
+==============================================================================
+
+extern void sx_ctrl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	start_simpliciti_tx_only() (1 times)
+
+==============================================================================
+
+extern void simpliciti_sync_get_data_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 183 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void simpliciti_sync_decode_ap_cmd_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 207 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void simpliciti_get_ed_data_callback() is called from 0 sites in this file.
+    It appears to be inlineable (size = 120 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char is_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_rf() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_ctrl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

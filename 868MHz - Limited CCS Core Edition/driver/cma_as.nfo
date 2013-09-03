@@ -1,0 +1,100 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+Making cma_as_stop a function synonym of as_stop
+
+		======File-level Analysis Summary======
+
+
+extern void cma_as_get_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 22 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	cma_as_read_register() (3 times)
+
+extern unsigned char cma_as_read_register() is called from 3 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_read_register() (1 times)
+
+extern void cma_as_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 37 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Timer0_A4_Delay() (1 times)
+	cma_as_write_register() (4 times)
+	as_start() (1 times)
+
+extern void cma_as_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_stop() (1 times)
+
+extern unsigned char cma_as_write_register() is called from 4 sites in this file.
+    It appears to be inlineable (size = 11 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_write_register() (1 times)
+
+
+These functions may be recursive:
+	cma_as_get_data()
+	cma_as_read_register()
+	cma_as_start()
+	cma_as_stop()
+	cma_as_write_register()
+
+These external functions are called but not defined here:
+	as_write_register()
+	as_stop()
+	as_start()
+	Timer0_A4_Delay()
+	as_read_register()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern unsigned char cma_as_write_register() is called from 4 sites in this file.
+    It appears to be inlineable (size = 11 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void cma_as_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void cma_as_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 37 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	cma_as_write_register() (4 times)
+
+==============================================================================
+
+extern unsigned char cma_as_read_register() is called from 3 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void cma_as_get_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 22 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	cma_as_read_register() (3 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

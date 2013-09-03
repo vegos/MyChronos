@@ -1,0 +1,111 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void close_radio() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	radio_powerdown() (1 times)
+	radio_reset() (1 times)
+
+extern void open_radio() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	radio_reset() (1 times)
+
+extern void radio_ISR() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	MRFI_RadioIsr() (1 times)
+	BlueRobin_RadioISR_v() (1 times)
+	is_rf() (1 times)
+
+extern void radio_powerdown() is called from 1 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Strobe() (2 times)
+
+extern void radio_reset() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Strobe() (2 times)
+
+extern void radio_sxoff() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Strobe() (2 times)
+
+
+These functions may be recursive:
+	close_radio()
+	open_radio()
+	radio_ISR()
+	radio_powerdown()
+	radio_reset()
+	radio_sxoff()
+
+These external functions are called but not defined here:
+	Strobe()
+	is_rf()
+	BlueRobin_RadioISR_v()
+	MRFI_RadioIsr()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void radio_sxoff() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void radio_reset() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void radio_powerdown() is called from 1 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void radio_ISR() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void open_radio() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	radio_reset() (1 times)
+
+==============================================================================
+
+extern void close_radio() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	radio_reset() (1 times)
+	radio_powerdown() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

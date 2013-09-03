@@ -1,0 +1,97 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void bmp_as_get_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_as_read_register() (6 times)
+
+extern unsigned char bmp_as_read_register() is called from 6 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_read_register() (1 times)
+
+extern void bmp_as_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_as_write_register() (5 times)
+	as_start() (1 times)
+
+extern void bmp_as_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_stop() (1 times)
+
+extern unsigned char bmp_as_write_register() is called from 5 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	as_write_register() (1 times)
+
+
+These functions may be recursive:
+	bmp_as_get_data()
+	bmp_as_read_register()
+	bmp_as_start()
+	bmp_as_stop()
+	bmp_as_write_register()
+
+These external functions are called but not defined here:
+	as_write_register()
+	as_stop()
+	as_start()
+	as_read_register()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern unsigned char bmp_as_write_register() is called from 5 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_as_stop() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_as_start() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_as_write_register() (5 times)
+
+==============================================================================
+
+extern unsigned char bmp_as_read_register() is called from 6 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void bmp_as_get_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	bmp_as_read_register() (6 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

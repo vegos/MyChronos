@@ -1,0 +1,85 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern unsigned char simpliciti_link() is called from 0 sites in this file.
+    It appears to be inlineable (size = 110 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	SMPL_Link() (1 times)
+	MRFI_DelayMs() (2 times)
+	SMPL_Init() (1 times)
+	SMPL_Ioctl() (2 times)
+	BSP_InitBoard() (1 times)
+
+extern void simpliciti_main_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 74 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	simpliciti_sync_get_data_callback() (1 times)
+	simpliciti_sync_decode_ap_cmd_callback() (1 times)
+	SMPL_Receive() (1 times)
+	MRFI_DelayMs() (2 times)
+	SMPL_SendOpt() (2 times)
+	SMPL_Ioctl() (3 times)
+	Timer0_A4_Delay() (1 times)
+
+extern void simpliciti_main_tx_only() is called from 0 sites in this file.
+    It appears to be inlineable (size = 34 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	SMPL_SendOpt() (1 times)
+	SMPL_Ioctl() (2 times)
+	simpliciti_get_ed_data_callback() (1 times)
+
+
+These functions may be recursive:
+	simpliciti_link()
+	simpliciti_main_sync()
+	simpliciti_main_tx_only()
+
+These external functions are called but not defined here:
+	simpliciti_get_ed_data_callback()
+	Timer0_A4_Delay()
+	SMPL_SendOpt()
+	SMPL_Receive()
+	simpliciti_sync_decode_ap_cmd_callback()
+	simpliciti_sync_get_data_callback()
+	BSP_InitBoard()
+	SMPL_Ioctl()
+	SMPL_Init()
+	MRFI_DelayMs()
+	SMPL_Link()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void simpliciti_main_tx_only() is called from 0 sites in this file.
+    It appears to be inlineable (size = 34 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void simpliciti_main_sync() is called from 0 sites in this file.
+    It appears to be inlineable (size = 74 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char simpliciti_link() is called from 0 sites in this file.
+    It appears to be inlineable (size = 110 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

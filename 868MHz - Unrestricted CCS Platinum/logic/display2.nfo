@@ -1,0 +1,109 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void display_CONT_ONCE() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (2 times)
+
+extern void display_NO_YES() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (2 times)
+
+extern void display_NO_YES_AUTO_MAN() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (4 times)
+
+extern void display_OFF_ON() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (2 times)
+
+extern void display_SW_Version() is called from 0 sites in this file.
+    It appears to be inlineable (size = 27 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (3 times)
+
+extern void display_charSegments() is called from 0 sites in this file.
+    It appears to be inlineable (size = 57 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	write_lcd_mem() (1 times)
+
+
+These functions may be recursive:
+	display_CONT_ONCE()
+	display_NO_YES()
+	display_NO_YES_AUTO_MAN()
+	display_OFF_ON()
+	display_SW_Version()
+	display_charSegments()
+
+These external functions are called but not defined here:
+	write_lcd_mem()
+	display_chars()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void display_charSegments() is called from 0 sites in this file.
+    It appears to be inlineable (size = 57 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_SW_Version() is called from 0 sites in this file.
+    It appears to be inlineable (size = 27 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_OFF_ON() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_NO_YES_AUTO_MAN() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_NO_YES() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_CONT_ONCE() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

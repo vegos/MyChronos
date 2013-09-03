@@ -1,0 +1,295 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void display_caldist() is called from 2 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_distance() (1 times)
+	display_calories() (1 times)
+
+extern void display_calories() is called from 1 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (2 times)
+	display_chars() (1 times)
+	int_to_array() (1 times)
+
+extern void display_distance() is called from 1 sites in this file.
+    It appears to be inlineable (size = 98 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (6 times)
+	display_chars() (1 times)
+	int_to_array() (4 times)
+
+extern void display_heartrate() is called from 0 sites in this file.
+    It appears to be inlineable (size = 46 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (2 times)
+	int_to_array() (1 times)
+	display_chars() (2 times)
+	is_bluerobin() (2 times)
+
+extern void display_selection_User_Gender() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_chars() (1 times)
+
+extern void display_speed() is called from 0 sites in this file.
+    It appears to be inlineable (size = 93 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (12 times)
+	display_chars() (1 times)
+	int_to_array() (2 times)
+
+extern void get_bluerobin_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 89 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	stop_bluerobin() (1 times)
+	BRRX_GetDistance_u16() (1 times)
+	BRRX_GetSpeed_u8() (1 times)
+	BRRX_GetHeartRate_u8() (1 times)
+	BRRX_GetState_t() (1 times)
+
+extern unsigned char is_bluerobin() is called from 2 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char is_bluerobin_searching() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void mx_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 4 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void mx_caldist() is called from 0 sites in this file.
+    It appears to be inlineable (size = 174 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	clear_line() (1 times)
+	display_symbol() (2 times)
+	set_value() (4 times)
+	display_chars() (2 times)
+	clear_display_all() (1 times)
+
+extern void reset_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 31 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void stop_bluerobin() is called from 2 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_symbol() (4 times)
+	close_radio() (1 times)
+	BRRX_Stop_v() (1 times)
+
+extern void sx_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 119 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	stop_bluerobin() (1 times)
+	Timer0_A4_Delay() (1 times)
+	BRRX_GetID_u32() (1 times)
+	BRRX_Start_v() (1 times)
+	BRRX_SetID_v() (1 times)
+	BRRX_GetState_t() (3 times)
+	display_symbol() (7 times)
+	WriteSingleReg() (1 times)
+	BRRX_SetSignalLevelReduction_v() (1 times)
+	BRRX_SetSearchTimeout_v() (1 times)
+	BRRX_SetPowerdownDelay_v() (1 times)
+	BRRX_Init_v() (1 times)
+	open_radio() (1 times)
+	is_rf() (1 times)
+
+extern void sx_caldist() is called from 0 sites in this file.
+    It appears to be inlineable (size = 20 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_caldist() (2 times)
+
+
+These functions may be recursive:
+	display_heartrate()
+	display_selection_User_Gender()
+	display_speed()
+	get_bluerobin_data()
+	mx_caldist()
+	sx_bluerobin()
+	stop_bluerobin()
+	sx_caldist()
+	display_caldist()
+	display_distance()
+	display_calories()
+
+These external functions are called but not defined here:
+	is_rf()
+	open_radio()
+	BRRX_Init_v()
+	BRRX_SetPowerdownDelay_v()
+	BRRX_SetSearchTimeout_v()
+	BRRX_SetSignalLevelReduction_v()
+	WriteSingleReg()
+	BRRX_SetID_v()
+	BRRX_Start_v()
+	BRRX_GetID_u32()
+	Timer0_A4_Delay()
+	BRRX_Stop_v()
+	close_radio()
+	clear_display_all()
+	set_value()
+	clear_line()
+	BRRX_GetState_t()
+	BRRX_GetHeartRate_u8()
+	BRRX_GetSpeed_u8()
+	BRRX_GetDistance_u16()
+	int_to_array()
+	display_chars()
+	display_symbol()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void display_calories() is called from 1 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_distance() is called from 1 sites in this file.
+    It appears to be inlineable (size = 98 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_caldist() is called from 2 sites in this file.
+    It appears to be inlineable (size = 14 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_calories() (1 times)
+	display_distance() (1 times)
+
+==============================================================================
+
+extern void sx_caldist() is called from 0 sites in this file.
+    It appears to be inlineable (size = 20 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_caldist() (2 times)
+
+==============================================================================
+
+extern void stop_bluerobin() is called from 2 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void sx_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 119 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	stop_bluerobin() (1 times)
+
+==============================================================================
+
+extern void reset_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 31 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_caldist() is called from 0 sites in this file.
+    It appears to be inlineable (size = 174 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_bluerobin() is called from 0 sites in this file.
+    It appears to be inlineable (size = 4 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char is_bluerobin_searching() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char is_bluerobin() is called from 2 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void get_bluerobin_data() is called from 0 sites in this file.
+    It appears to be inlineable (size = 89 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	stop_bluerobin() (1 times)
+
+==============================================================================
+
+extern void display_speed() is called from 0 sites in this file.
+    It appears to be inlineable (size = 93 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_selection_User_Gender() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_heartrate() is called from 0 sites in this file.
+    It appears to be inlineable (size = 46 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	is_bluerobin() (2 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

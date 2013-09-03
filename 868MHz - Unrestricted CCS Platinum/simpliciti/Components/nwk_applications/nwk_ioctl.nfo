@@ -1,0 +1,118 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern enum smplStatus nwk_connectionControl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_freeConnection() (1 times)
+	nwk_getConnInfo() (1 times)
+
+extern enum smplStatus nwk_deviceAddress() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_getMyAddress() (1 times)
+	memcpy() (1 times)
+	nwk_setMyAddress() (1 times)
+
+extern enum smplStatus nwk_radioControl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 91 units)
+    It has 5 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	MRFI_Sleep() (1 times)
+	MRFI_WakeUp() (1 times)
+	memcpy() (1 times)
+	nwk_getConnInfo() (1 times)
+	MRFI_Rssi() (1 times)
+	MRFI_RxOn() (1 times)
+	MRFI_RxIdle() (2 times)
+	MRFI_SetRFPwr() (1 times)
+
+extern enum smplStatus nwk_rawReceive() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_retrieveFrame() (1 times)
+
+extern enum smplStatus nwk_rawSend() is called from 0 sites in this file.
+    It appears to be inlineable (size = 37 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_sendFrame() (1 times)
+	memcpy() (1 times)
+	nwk_buildFrame() (1 times)
+
+
+These functions may be recursive:
+	nwk_connectionControl()
+	nwk_deviceAddress()
+	nwk_radioControl()
+	nwk_rawReceive()
+	nwk_rawSend()
+
+These external functions are called but not defined here:
+	memcpy()
+	nwk_buildFrame()
+	nwk_sendFrame()
+	nwk_retrieveFrame()
+	MRFI_SetRFPwr()
+	MRFI_RxIdle()
+	MRFI_RxOn()
+	MRFI_Rssi()
+	MRFI_WakeUp()
+	MRFI_Sleep()
+	nwk_setMyAddress()
+	nwk_getMyAddress()
+	nwk_getConnInfo()
+	nwk_freeConnection()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern enum smplStatus nwk_rawSend() is called from 0 sites in this file.
+    It appears to be inlineable (size = 37 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_rawReceive() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_radioControl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 91 units)
+    It has 5 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_deviceAddress() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_connectionControl() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

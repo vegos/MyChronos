@@ -1,0 +1,124 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void ReadBurstReg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+
+extern unsigned char ReadSingleReg() is called from 1 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+
+extern void ResetRadioCore() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Strobe() (2 times)
+
+extern unsigned char Strobe() is called from 2 sites in this file.
+    It appears to be inlineable (size = 89 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	WriteSingleReg() (2 times)
+	ReadSingleReg() (1 times)
+	_disable_interrupts() (1 times)
+
+extern void WriteBurstReg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+
+extern void WritePATable() is called from 0 sites in this file.
+    It appears to be inlineable (size = 69 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+
+extern void WriteSingleReg() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+
+
+These functions may be recursive:
+	ReadBurstReg()
+	ResetRadioCore()
+	Strobe()
+	ReadSingleReg()
+	WriteBurstReg()
+	WritePATable()
+	WriteSingleReg()
+
+These external functions are called but not defined here:
+	_disable_interrupts()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void WriteSingleReg() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void WritePATable() is called from 0 sites in this file.
+    It appears to be inlineable (size = 69 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void WriteBurstReg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char ReadSingleReg() is called from 1 sites in this file.
+    It appears to be inlineable (size = 13 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char Strobe() is called from 2 sites in this file.
+    It appears to be inlineable (size = 89 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ReadSingleReg() (1 times)
+	WriteSingleReg() (2 times)
+
+==============================================================================
+
+extern void ResetRadioCore() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Strobe() (2 times)
+
+==============================================================================
+
+extern void ReadBurstReg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 48 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

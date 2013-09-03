@@ -1,0 +1,262 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+static enum fhStatus handleLinkRequest() is called from 1 sites in this file.
+    It appears to be inlineable (size = 29 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	smpl_send_link_reply() (1 times)
+	smpl_send_unlink_reply() (1 times)
+
+extern void nwk_getLinkToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char nwk_getLocalLinkID() is called from 0 sites in this file.
+    It appears to be inlineable (size = 46 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_setListenContext() (1 times)
+	_disable_interrupts() (1 times)
+
+extern enum smplStatus nwk_link() is called from 0 sites in this file.
+    It has 6 non-trivial scope blocks nested 6 deep.
+    It calls these functions:
+	MRFI_Sleep() (1 times)
+	MRFI_RxIdle() (1 times)
+	MRFI_ReplyDelay() (1 times)
+	MRFI_RxOn() (1 times)
+	MRFI_WakeUp() (1 times)
+	MRFI_GetRadioState() (1 times)
+	SMPL_Ioctl() (2 times)
+	nwk_getProtocolVersion() (1 times)
+	nwk_getMyRxType() (1 times)
+	nwk_putNumObjectIntoMsg() (1 times)
+	nwk_getBCastAddress() (1 times)
+	memcpy() (1 times)
+	nwk_freeConnection() (3 times)
+	nwk_allocateLocalRxPort() (1 times)
+	nwk_getNextConnection() (1 times)
+
+extern void nwk_linkInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memset() (1 times)
+	MRFI_RandomByte() (1 times)
+
+extern enum fhStatus nwk_processLink() is called from 0 sites in this file.
+    It appears to be inlineable (size = 16 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	handleLinkRequest() (1 times)
+	MRFI_PostKillSem() (1 times)
+	nwk_isValidReply() (1 times)
+
+extern void nwk_setLinkToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void nwk_setListenContext() is called from 1 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern enum smplStatus nwk_unlink() is called from 0 sites in this file.
+    It appears to be inlineable (size = 123 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	nwk_freeConnection() (1 times)
+	MRFI_Sleep() (1 times)
+	MRFI_RxIdle() (1 times)
+	MRFI_ReplyDelay() (1 times)
+	MRFI_RxOn() (1 times)
+	MRFI_WakeUp() (1 times)
+	MRFI_GetRadioState() (1 times)
+	SMPL_Ioctl() (2 times)
+	memcpy() (1 times)
+	nwk_getConnInfo() (1 times)
+
+static unsigned char smpl_send_link_reply() is called from 1 sites in this file.
+    It appears to be inlineable (size = 188 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	nwk_sendFrame() (2 times)
+	nwk_buildFrame() (2 times)
+	nwk_getMyRxType() (2 times)
+	nwk_freeConnection() (4 times)
+	nwk_allocateLocalRxPort() (1 times)
+	memcpy() (3 times)
+	nwk_getNextConnection() (1 times)
+	nwk_isLinkDuplicate() (1 times)
+	nwk_getNumObjectFromMsg() (1 times)
+	nwk_getProtocolVersion() (1 times)
+
+static void smpl_send_unlink_reply() is called from 1 sites in this file.
+    It appears to be inlineable (size = 49 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_sendFrame() (1 times)
+	memcpy() (1 times)
+	nwk_buildFrame() (1 times)
+	nwk_freeConnection() (1 times)
+	nwk_findPeer() (1 times)
+
+
+These functions may be recursive:
+	nwk_getLocalLinkID()
+	nwk_link()
+	nwk_linkInit()
+	nwk_processLink()
+	handleLinkRequest()
+	smpl_send_link_reply()
+	smpl_send_unlink_reply()
+	nwk_unlink()
+
+These external functions are called but not defined here:
+	memset()
+	memcpy()
+	nwk_findPeer()
+	nwk_getNumObjectFromMsg()
+	nwk_isLinkDuplicate()
+	nwk_buildFrame()
+	nwk_sendFrame()
+	nwk_getConnInfo()
+	nwk_isValidReply()
+	MRFI_PostKillSem()
+	MRFI_RandomByte()
+	nwk_getNextConnection()
+	nwk_allocateLocalRxPort()
+	nwk_freeConnection()
+	nwk_getBCastAddress()
+	nwk_putNumObjectIntoMsg()
+	nwk_getMyRxType()
+	nwk_getProtocolVersion()
+	SMPL_Ioctl()
+	MRFI_GetRadioState()
+	MRFI_WakeUp()
+	MRFI_RxOn()
+	MRFI_ReplyDelay()
+	MRFI_RxIdle()
+	MRFI_Sleep()
+	_disable_interrupts()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern enum smplStatus nwk_unlink() is called from 0 sites in this file.
+    It appears to be inlineable (size = 123 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void nwk_setListenContext() is called from 1 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void nwk_setLinkToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static void smpl_send_unlink_reply() is called from 1 sites in this file.
+    It appears to be inlineable (size = 49 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static unsigned char smpl_send_link_reply() is called from 1 sites in this file.
+    It appears to be inlineable (size = 188 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	<NONE>
+	*** smpl_send_link_reply()'s return value is not needed:return 2u;
+	*** smpl_send_link_reply()'s return value is not needed:return 2u;
+	*** smpl_send_link_reply()'s return value is not needed:return 2u;
+	*** smpl_send_link_reply()'s return value is not needed:return 1u;
+	*** smpl_send_link_reply()'s return value is not needed:return 1u;
+	*** smpl_send_link_reply()'s return value is not needed:return 1u;
+	*** smpl_send_link_reply()'s return value is not needed:return 1u;
+
+==============================================================================
+
+static enum fhStatus handleLinkRequest() is called from 1 sites in this file.
+    It appears to be inlineable (size = 29 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	smpl_send_unlink_reply() (1 times)
+	smpl_send_link_reply() (1 times)
+
+==============================================================================
+
+extern enum fhStatus nwk_processLink() is called from 0 sites in this file.
+    It appears to be inlineable (size = 16 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	handleLinkRequest() (1 times)
+
+==============================================================================
+
+extern void nwk_linkInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_link() is called from 0 sites in this file.
+    It has 6 non-trivial scope blocks nested 6 deep.
+    It calls these functions:
+	<NONE>
+
+The following local variables in nwk_link() will be grouped together
+to share stack space among distinct scoping blocks.  References
+in the source interlisting will look like "O$1.s3_1.l3_2" or "&$O$O1+0".
+
+    --offset--    --reference--			 --variable--
+
+          0	  O$1.s3_1.l3_2                  union $$fake8 ioctl_info  [../simpliciti/Components/nwk_applications/nwk_link.c:300]
+          8	  O$1.s3_1.l3_3                  struct $$fake4 addr  [../simpliciti/Components/nwk_applications/nwk_link.c:295]
+
+
+==============================================================================
+
+extern unsigned char nwk_getLocalLinkID() is called from 0 sites in this file.
+    It appears to be inlineable (size = 46 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_setListenContext() (1 times)
+
+==============================================================================
+
+extern void nwk_getLinkToken() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

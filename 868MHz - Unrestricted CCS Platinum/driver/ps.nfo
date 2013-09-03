@@ -1,0 +1,157 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern int conv_pa_to_meter() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void init_pressure_table() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void ps_i2c_delay() is called from 19 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char ps_i2c_read() is called from 3 sites in this file.
+    It appears to be inlineable (size = 85 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (4 times)
+
+extern unsigned char ps_i2c_sda() is called from 11 sites in this file.
+    It appears to be inlineable (size = 145 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (13 times)
+
+extern void ps_i2c_write() is called from 6 sites in this file.
+    It appears to be inlineable (size = 63 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (2 times)
+
+extern void ps_init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Timer0_A4_Delay() (1 times)
+
+extern unsigned ps_read_register() is called from 0 sites in this file.
+    It appears to be inlineable (size = 58 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_read() (3 times)
+	ps_i2c_write() (3 times)
+	ps_i2c_sda() (6 times)
+
+extern unsigned char ps_write_register() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_write() (3 times)
+	ps_i2c_sda() (5 times)
+
+extern void update_pressure_table() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+
+These functions may be recursive:
+	ps_init()
+
+These external functions are called but not defined here:
+	Timer0_A4_Delay()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void update_pressure_table() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void ps_i2c_delay() is called from 19 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char ps_i2c_sda() is called from 11 sites in this file.
+    It appears to be inlineable (size = 145 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (13 times)
+
+==============================================================================
+
+extern void ps_i2c_write() is called from 6 sites in this file.
+    It appears to be inlineable (size = 63 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (2 times)
+
+==============================================================================
+
+extern unsigned char ps_write_register() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_sda() (5 times)
+	ps_i2c_write() (3 times)
+
+==============================================================================
+
+extern unsigned char ps_i2c_read() is called from 3 sites in this file.
+    It appears to be inlineable (size = 85 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_delay() (4 times)
+
+==============================================================================
+
+extern unsigned ps_read_register() is called from 0 sites in this file.
+    It appears to be inlineable (size = 58 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	ps_i2c_sda() (6 times)
+	ps_i2c_write() (3 times)
+	ps_i2c_read() (3 times)
+
+==============================================================================
+
+extern void ps_init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void init_pressure_table() is called from 0 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern int conv_pa_to_meter() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

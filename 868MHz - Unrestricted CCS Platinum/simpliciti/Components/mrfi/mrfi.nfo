@@ -1,0 +1,604 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern void MRFI_DelayMs() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsec() (1 times)
+
+extern void MRFI_DisableRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+extern void MRFI_EnableRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 21 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+extern unsigned char MRFI_GetRadioState() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void MRFI_Init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 233 units)
+    It has 8 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	_enable_interrupts() (1 times)
+	Mrfi_RxModeOff() (1 times)
+	MRFI_SetRFPwr() (1 times)
+	MRFI_SetLogicalChannel() (1 times)
+	mrfiRadioInterfaceWriteReg() (2 times)
+	_disable_interrupts() (5 times)
+	mrfiRadioInterfaceReadReg() (4 times)
+	mrfiRadioInterfaceCmdStrobe() (7 times)
+	mrfiRadioInterfaceInit() (1 times)
+	memset() (3 times)
+
+extern void MRFI_PostKillSem() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void MRFI_RadioIsr() is called from 0 sites in this file.
+    It appears to be inlineable (size = 62 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	Mrfi_SyncPinRxIsr() (1 times)
+	_disable_interrupts() (5 times)
+
+extern unsigned char MRFI_RandomByte() is called from 1 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void MRFI_Receive() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void MRFI_ReplyDelay() is called from 0 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsecSem() (1 times)
+	_disable_interrupts() (2 times)
+
+extern char MRFI_Rssi() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	Mrfi_CalculateRssi() (1 times)
+	mrfiRadioInterfaceReadReg() (1 times)
+
+extern void MRFI_RxIdle() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	Mrfi_RxModeOff() (1 times)
+
+extern void MRFI_RxOn() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	Mrfi_RxModeOn() (1 times)
+
+extern void MRFI_SetLogicalChannel() is called from 1 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	Mrfi_RxModeOn() (1 times)
+	mrfiRadioInterfaceWriteReg() (1 times)
+	Mrfi_RxModeOff() (1 times)
+
+extern void MRFI_SetRFPwr() is called from 1 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (1 times)
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+extern unsigned char MRFI_SetRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+extern void MRFI_Sleep() is called from 0 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (1 times)
+	MRFI_RxIdle() (1 times)
+	_disable_interrupts() (1 times)
+
+extern unsigned char MRFI_Transmit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 110 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_RxModeOn() (1 times)
+	_disable_interrupts() (2 times)
+	Mrfi_RandomBackoffDelay() (1 times)
+	Mrfi_DelayUsec() (1 times)
+	mrfiRadioInterfaceCmdStrobe() (7 times)
+	mrfiRadioInterfaceWriteTxFifo() (1 times)
+	Mrfi_RxModeOff() (1 times)
+
+extern void MRFI_WakeUp() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (2 times)
+
+static char Mrfi_CalculateRssi() is called from 2 sites in this file.
+    It appears to be inlineable (size = 29 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+static void Mrfi_DelayUsec() is called from 4 sites in this file.
+    It appears to be inlineable (size = 22 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	BSP_Delay() (1 times)
+	_disable_interrupts() (1 times)
+
+static void Mrfi_DelayUsecSem() is called from 1 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	BSP_Delay() (1 times)
+	_disable_interrupts() (1 times)
+
+static void Mrfi_RandomBackoffDelay() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsec() (1 times)
+	MRFI_RandomByte() (1 times)
+
+static unsigned char Mrfi_RxAddrIsFiltered() is called from 1 sites in this file.
+    It appears to be inlineable (size = 60 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+static void Mrfi_RxModeOff() is called from 4 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (3 times)
+
+static void Mrfi_RxModeOn() is called from 3 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (1 times)
+
+static void Mrfi_SyncPinRxIsr() is called from 1 sites in this file.
+    It appears to be inlineable (size = 119 units)
+    It has 5 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (4 times)
+	_disable_interrupts() (2 times)
+	MRFI_RxCompleteISR() (1 times)
+	Mrfi_CalculateRssi() (1 times)
+	Mrfi_RxAddrIsFiltered() (1 times)
+	memset() (1 times)
+	mrfiRadioInterfaceReadRxFifo() (3 times)
+	mrfiRadioInterfaceReadReg() (2 times)
+
+extern unsigned char mrfiRadioInterfaceCmdStrobe() is called from 25 sites in this file.
+    It appears to be inlineable (size = 83 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsec() (1 times)
+	mrfiRadioInterfaceWriteReg() (2 times)
+	mrfiRadioInterfaceReadReg() (1 times)
+	_disable_interrupts() (2 times)
+
+extern void mrfiRadioInterfaceInit() is called from 1 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char mrfiRadioInterfaceReadReg() is called from 8 sites in this file.
+    It appears to be inlineable (size = 44 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (2 times)
+
+extern void mrfiRadioInterfaceReadRxFifo() is called from 3 sites in this file.
+    It appears to be inlineable (size = 73 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (2 times)
+
+extern void mrfiRadioInterfaceWriteReg() is called from 9 sites in this file.
+    It appears to be inlineable (size = 36 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (2 times)
+
+extern void mrfiRadioInterfaceWriteTxFifo() is called from 1 sites in this file.
+    It appears to be inlineable (size = 41 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	_disable_interrupts() (2 times)
+
+Address of global variable is never taken:
+	static unsigned long noFrame
+	static unsigned long crcPass
+	static unsigned long crcFail
+	static unsigned char mrfiRxFilterEnabled
+	static unsigned sBackoffHelper
+	static unsigned sReplyDelayScalar
+	static unsigned char mrfiRndSeed
+	static unsigned char mrfiRadioState
+
+
+
+These functions may be recursive:
+	MRFI_DelayMs()
+	MRFI_DisableRxAddrFilter()
+	MRFI_EnableRxAddrFilter()
+	MRFI_Init()
+	MRFI_RadioIsr()
+	Mrfi_SyncPinRxIsr()
+	MRFI_ReplyDelay()
+	Mrfi_DelayUsecSem()
+	MRFI_Rssi()
+	MRFI_RxOn()
+	MRFI_SetLogicalChannel()
+	MRFI_SetRFPwr()
+	MRFI_SetRxAddrFilter()
+	MRFI_Sleep()
+	MRFI_RxIdle()
+	MRFI_Transmit()
+	Mrfi_RxModeOn()
+	Mrfi_RandomBackoffDelay()
+	Mrfi_RxModeOff()
+	MRFI_WakeUp()
+	mrfiRadioInterfaceCmdStrobe()
+	Mrfi_DelayUsec()
+	mrfiRadioInterfaceReadReg()
+	mrfiRadioInterfaceReadRxFifo()
+	mrfiRadioInterfaceWriteReg()
+	mrfiRadioInterfaceWriteTxFifo()
+
+Function Mrfi_RxAddrIsFiltered() will be specialized on these parameters:
+	[1] pAddr == &mrfiIncomingPacket+1;
+
+Function Mrfi_DelayUsecSem() will be specialized on these parameters:
+	[1] howLong == 1000u;
+
+Results of interprocedural value propagation:
+
+   static void Mrfi_DelayUsecSem() has these parameter attributes:
+      unsigned howLong :  howLong == 1000u;
+
+These external functions are called but not defined here:
+	memset()
+	MRFI_RxCompleteISR()
+	BSP_Delay()
+	_enable_interrupts()
+	_disable_interrupts()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void mrfiRadioInterfaceWriteTxFifo() is called from 1 sites in this file.
+    It appears to be inlineable (size = 41 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mrfiRadioInterfaceWriteReg() is called from 9 sites in this file.
+    It appears to be inlineable (size = 36 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mrfiRadioInterfaceReadRxFifo() is called from 3 sites in this file.
+    It appears to be inlineable (size = 73 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char mrfiRadioInterfaceReadReg() is called from 8 sites in this file.
+    It appears to be inlineable (size = 44 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mrfiRadioInterfaceInit() is called from 1 sites in this file.
+    It appears to be inlineable (size = 1 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static void Mrfi_DelayUsec() is called from 4 sites in this file.
+    It appears to be inlineable (size = 22 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char mrfiRadioInterfaceCmdStrobe() is called from 25 sites in this file.
+    It appears to be inlineable (size = 83 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceReadReg() (1 times)
+	mrfiRadioInterfaceWriteReg() (2 times)
+	Mrfi_DelayUsec() (1 times)
+
+==============================================================================
+
+extern void MRFI_WakeUp() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (2 times)
+
+==============================================================================
+
+static void Mrfi_RxModeOff() is called from 4 sites in this file.
+    It appears to be inlineable (size = 18 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (3 times)
+
+==============================================================================
+
+extern unsigned char MRFI_RandomByte() is called from 1 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static void Mrfi_RandomBackoffDelay() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	MRFI_RandomByte() (1 times)
+	Mrfi_DelayUsec() (1 times)
+
+==============================================================================
+
+static void Mrfi_RxModeOn() is called from 3 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceCmdStrobe() (1 times)
+
+==============================================================================
+
+extern unsigned char MRFI_Transmit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 110 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_RxModeOff() (1 times)
+	mrfiRadioInterfaceWriteTxFifo() (1 times)
+	mrfiRadioInterfaceCmdStrobe() (7 times)
+	Mrfi_DelayUsec() (1 times)
+	Mrfi_RandomBackoffDelay() (1 times)
+	Mrfi_RxModeOn() (1 times)
+
+==============================================================================
+
+extern void MRFI_RxIdle() is called from 1 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_RxModeOff() (1 times)
+
+==============================================================================
+
+extern void MRFI_Sleep() is called from 0 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	MRFI_RxIdle() (1 times)
+	mrfiRadioInterfaceCmdStrobe() (1 times)
+
+==============================================================================
+
+extern unsigned char MRFI_SetRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+ADVICE: In function MRFI_SetRxAddrFilter() in ..\simpliciti\Components\mrfi\radios/family5/mrfi_radio.c
+	in the 'for' loop with loop variable 'i' at lines ..\simpliciti\Components\mrfi\radios/family5/mrfi_radio.c:1649-1652
+	for the statement mrfiRxFilterAddr[i] = pAddr[i]; at line 1651
+
+	Consider declaring 'pAddr' as unsigned char * const restrict pAddr
+	to assert that lvalues pAddr[i];
+	and                    mrfiRxFilterAddr[i];
+	do not access the same object in memory.
+
+==============================================================================
+
+extern void MRFI_SetRFPwr() is called from 1 sites in this file.
+    It appears to be inlineable (size = 17 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+==============================================================================
+
+extern void MRFI_SetLogicalChannel() is called from 1 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_RxModeOff() (1 times)
+	mrfiRadioInterfaceWriteReg() (1 times)
+	Mrfi_RxModeOn() (1 times)
+
+==============================================================================
+
+extern void MRFI_RxOn() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_RxModeOn() (1 times)
+
+==============================================================================
+
+static char Mrfi_CalculateRssi() is called from 2 sites in this file.
+    It appears to be inlineable (size = 29 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern char MRFI_Rssi() is called from 0 sites in this file.
+    It appears to be inlineable (size = 19 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceReadReg() (1 times)
+	Mrfi_CalculateRssi() (1 times)
+
+==============================================================================
+
+static void Mrfi_DelayUsecSem() is called from 1 sites in this file.
+    It appears to be inlineable (size = 25 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void MRFI_ReplyDelay() is called from 0 sites in this file.
+    It appears to be inlineable (size = 32 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsecSem() (1 times)
+
+==============================================================================
+
+extern void MRFI_Receive() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static unsigned char Mrfi_RxAddrIsFiltered() is called from 1 sites in this file.
+    It appears to be inlineable (size = 60 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static void Mrfi_SyncPinRxIsr() is called from 1 sites in this file.
+    It appears to be inlineable (size = 119 units)
+    It has 5 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	mrfiRadioInterfaceReadReg() (2 times)
+	mrfiRadioInterfaceReadRxFifo() (3 times)
+	Mrfi_RxAddrIsFiltered() (1 times)
+	Mrfi_CalculateRssi() (1 times)
+	mrfiRadioInterfaceCmdStrobe() (4 times)
+
+==============================================================================
+
+extern void MRFI_RadioIsr() is called from 0 sites in this file.
+    It appears to be inlineable (size = 62 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	Mrfi_SyncPinRxIsr() (1 times)
+
+==============================================================================
+
+extern void MRFI_PostKillSem() is called from 0 sites in this file.
+    It appears to be inlineable (size = 8 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void MRFI_Init() is called from 0 sites in this file.
+    It appears to be inlineable (size = 233 units)
+    It has 8 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	mrfiRadioInterfaceInit() (1 times)
+	mrfiRadioInterfaceCmdStrobe() (7 times)
+	mrfiRadioInterfaceReadReg() (4 times)
+	mrfiRadioInterfaceWriteReg() (2 times)
+	MRFI_SetLogicalChannel() (1 times)
+	MRFI_SetRFPwr() (1 times)
+	Mrfi_RxModeOff() (1 times)
+
+==============================================================================
+
+extern unsigned char MRFI_GetRadioState() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void MRFI_EnableRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 21 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+==============================================================================
+
+extern void MRFI_DisableRxAddrFilter() is called from 0 sites in this file.
+    It appears to be inlineable (size = 7 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	mrfiRadioInterfaceWriteReg() (1 times)
+
+==============================================================================
+
+extern void MRFI_DelayMs() is called from 0 sites in this file.
+    It appears to be inlineable (size = 12 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	Mrfi_DelayUsec() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

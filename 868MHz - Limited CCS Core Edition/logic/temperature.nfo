@@ -1,0 +1,136 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+extern int convert_C_to_F() is called from 2 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern int convert_F_to_C() is called from 1 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void display_temperature() is called from 1 sites in this file.
+    It appears to be inlineable (size = 118 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	display_temperature() (1 times)
+	temperature_measurement() (1 times)
+	display_char() (2 times)
+	display_chars() (1 times)
+	int_to_array() (1 times)
+	convert_C_to_F() (1 times)
+	display_symbol() (10 times)
+
+extern unsigned char is_temp_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern void mx_temperature() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	convert_F_to_C() (1 times)
+	set_value() (1 times)
+	display_symbol() (2 times)
+	display_char() (2 times)
+	convert_C_to_F() (1 times)
+	clear_display_all() (1 times)
+
+extern void reset_temp_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	temperature_measurement() (1 times)
+
+extern void temperature_measurement() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	adc12_single_conversion() (1 times)
+
+
+These functions may be recursive:
+	display_temperature()
+	mx_temperature()
+	reset_temp_measurement()
+	temperature_measurement()
+
+These external functions are called but not defined here:
+	adc12_single_conversion()
+	clear_display_all()
+	set_value()
+	display_symbol()
+	int_to_array()
+	display_chars()
+	display_char()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void temperature_measurement() is called from 2 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void reset_temp_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	temperature_measurement() (1 times)
+
+==============================================================================
+
+extern int convert_C_to_F() is called from 2 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern int convert_F_to_C() is called from 1 sites in this file.
+    It appears to be inlineable (size = 10 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void mx_temperature() is called from 0 sites in this file.
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	convert_C_to_F() (1 times)
+	convert_F_to_C() (1 times)
+
+==============================================================================
+
+extern unsigned char is_temp_measurement() is called from 0 sites in this file.
+    It appears to be inlineable (size = 6 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void display_temperature() is called from 1 sites in this file.
+    It appears to be inlineable (size = 118 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	convert_C_to_F() (1 times)
+	temperature_measurement() (1 times)
+	display_temperature() (1 times)
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==

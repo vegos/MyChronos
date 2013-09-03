@@ -1,0 +1,290 @@
+MSP430 C/C++ Optimizer                  v4.1.5
+Build Number 1NC6A-KDADEMDK-RTARQ-WAR-ZACIF_U_R_V
+
+		======File-level Analysis Summary======
+
+
+static void initializeConnection() is called from 1 sites in this file.
+    It appears to be inlineable (size = 49 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	map_lid2idx() (1 times)
+
+static unsigned char map_lid2idx() is called from 2 sites in this file.
+    It appears to be inlineable (size = 36 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern enum smplStatus nwk_NVObj() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char nwk_allocateLocalRxPort() is called from 0 sites in this file.
+    It appears to be inlineable (size = 149 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memcmp() (1 times)
+	memset() (1 times)
+
+extern unsigned char nwk_checkAppMsgTID() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern enum smplStatus nwk_checkConnInfo() is called from 0 sites in this file.
+    It appears to be inlineable (size = 27 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern unsigned char nwk_findAddressMatch() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memcmp() (1 times)
+
+extern struct $$fake3 *nwk_findPeer() is called from 0 sites in this file.
+    It appears to be inlineable (size = 40 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memcmp() (1 times)
+
+extern void nwk_freeConnection() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+extern struct $$fake3 *nwk_getConnInfo() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	map_lid2idx() (1 times)
+
+extern struct $$fake3 *nwk_getNextConnection() is called from 0 sites in this file.
+    It appears to be inlineable (size = 45 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	initializeConnection() (1 times)
+
+extern void nwk_getNumObjectFromMsg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memmove() (1 times)
+
+extern unsigned char nwk_isConnectionValid() is called from 0 sites in this file.
+    It appears to be inlineable (size = 91 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	MRFI_PostKillSem() (1 times)
+	nwk_sendAckReply() (1 times)
+	memcmp() (1 times)
+
+extern struct $$fake3 *nwk_isLinkDuplicate() is called from 0 sites in this file.
+    It appears to be inlineable (size = 38 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memcmp() (1 times)
+
+extern unsigned char nwk_isValidReply() is called from 0 sites in this file.
+    It appears to be inlineable (size = 39 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_getMyAddress() (1 times)
+	memcmp() (1 times)
+
+extern enum smplStatus nwk_nwkInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 81 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	nwk_getBCastAddress() (1 times)
+	memcpy() (1 times)
+	nwk_securityInit() (1 times)
+	nwk_linkInit() (1 times)
+	nwk_mgmtInit() (1 times)
+	nwk_joinInit() (1 times)
+	nwk_pingInit() (1 times)
+	nwk_freqInit() (1 times)
+	nwk_QInit() (1 times)
+	nwk_frameInit() (1 times)
+	nwk_globalsInit() (1 times)
+	memset() (1 times)
+
+extern void nwk_putNumObjectIntoMsg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 38 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	memmove() (1 times)
+
+
+These functions may be recursive:
+	nwk_isConnectionValid()
+	nwk_isValidReply()
+	nwk_nwkInit()
+
+These external functions are called but not defined here:
+	memcpy()
+	memmove()
+	memset()
+	memcmp()
+	nwk_globalsInit()
+	nwk_frameInit()
+	nwk_QInit()
+	nwk_freqInit()
+	nwk_pingInit()
+	nwk_joinInit()
+	nwk_mgmtInit()
+	nwk_linkInit()
+	nwk_securityInit()
+	nwk_getBCastAddress()
+	nwk_getMyAddress()
+	nwk_sendAckReply()
+	MRFI_PostKillSem()
+
+
+		======= End file-level Analysis =======
+
+
+==============================================================================
+
+extern void nwk_putNumObjectIntoMsg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 38 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_nwkInit() is called from 0 sites in this file.
+    It appears to be inlineable (size = 81 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char nwk_isValidReply() is called from 0 sites in this file.
+    It appears to be inlineable (size = 39 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern struct $$fake3 *nwk_isLinkDuplicate() is called from 0 sites in this file.
+    It appears to be inlineable (size = 38 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char nwk_isConnectionValid() is called from 0 sites in this file.
+    It appears to be inlineable (size = 91 units)
+    It has 4 non-trivial scope blocks nested 4 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern void nwk_getNumObjectFromMsg() is called from 0 sites in this file.
+    It appears to be inlineable (size = 9 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static unsigned char map_lid2idx() is called from 2 sites in this file.
+    It appears to be inlineable (size = 36 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+static void initializeConnection() is called from 1 sites in this file.
+    It appears to be inlineable (size = 49 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	map_lid2idx() (1 times)
+
+==============================================================================
+
+extern struct $$fake3 *nwk_getNextConnection() is called from 0 sites in this file.
+    It appears to be inlineable (size = 45 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	initializeConnection() (1 times)
+
+==============================================================================
+
+extern struct $$fake3 *nwk_getConnInfo() is called from 0 sites in this file.
+    It appears to be inlineable (size = 33 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	map_lid2idx() (1 times)
+
+==============================================================================
+
+extern void nwk_freeConnection() is called from 0 sites in this file.
+    It appears to be inlineable (size = 5 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern struct $$fake3 *nwk_findPeer() is called from 0 sites in this file.
+    It appears to be inlineable (size = 40 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char nwk_findAddressMatch() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_checkConnInfo() is called from 0 sites in this file.
+    It appears to be inlineable (size = 27 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char nwk_checkAppMsgTID() is called from 0 sites in this file.
+    It appears to be inlineable (size = 35 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern unsigned char nwk_allocateLocalRxPort() is called from 0 sites in this file.
+    It appears to be inlineable (size = 149 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+
+==============================================================================
+
+extern enum smplStatus nwk_NVObj() is called from 0 sites in this file.
+    It appears to be inlineable (size = 2 units)
+    It has 3 non-trivial scope blocks nested 3 deep.
+    It calls these functions:
+	<NONE>
+<<NULL MIX DOMAIN>>
+
+== END OF INFO OUTPUT==
