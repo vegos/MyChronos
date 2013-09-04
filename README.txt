@@ -15,7 +15,8 @@ http://www.ti.com/tool/ez430-chronos&DCMP=Chronos&HQS=Other+OT+chronos
 http://processors.wiki.ti.com/index.php/EZ430-Chronos?DCMP=Chronos&HQS=Other+OT+chronoswiki
 
 
-MyChronos is a modified stock firmware (v.1.7) -- at least, it's a way for me to start learning & customizing the eZ430 to my needs :)
+MyChronos is a modified stock firmware (v.1.7)
+At least, it's a way for me to start learning & customizing the eZ430 to my needs :)
 
 
 Menu Structure:
@@ -26,10 +27,11 @@ Line 1:
 - Altitude
 - Barometer in hPa
 - Alarm
-- Accelerometer Z-Axis (Up for X-Axis & Y-Axis)
+- Accelerometer Z-Axis (Up for X-Axis or Y-Axis)
 
 Line 2:
-- Date (Up for Year, 3-letters day of week name, 3-letters month name & 2-letters day-of-week & day)
+- Date (Up for Year, 3-letters day of week name or 3-letters month name or 
+  2-letters day-of-week or day)
 - Battery Voltage
 - Ctrl (Control: old PPT mode, for use with my custom python script)
 - Sync (for synching time with my ntp -- it does not sync altitude & temperature)
