@@ -304,6 +304,7 @@ void sx_date(u8 line)
     if (sDate.display == DISPLAY_DEFAULT_VIEW) { sDate.display = DISPLAY_ALTERNATIVE_VIEW; }
     else if (sDate.display == DISPLAY_ALTERNATIVE_VIEW  ) { sDate.display = DISPLAY_ALTERNATIVE_VIEW_2; }
     else if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_2  ) { sDate.display = DISPLAY_ALTERNATIVE_VIEW_3; }
+    else if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_3  ) { sDate.display = DISPLAY_ALTERNATIVE_VIEW_4; }
     else { sDate.display = DISPLAY_DEFAULT_VIEW; }
 }
 
@@ -329,7 +330,8 @@ void display_date(u8 line, u8 update)
             str = int_to_array(sDate.day, 2, 0);
             if (sys.flag.use_metric_units)
             {
-                display_chars(switch_seg(line, LCD_SEG_L1_3_2, LCD_SEG_L2_3_2), str, SEG_ON);
+                display_chars(switch_seg(line, LCD_SEG_L1_3_2, LCD_SEG_L2_4_2), str, SEG_ON);
+                display_chars(switch_seg(line, LCD_SEG_L1_3_2, LCD_SEG_L2_2_0), " ", SEG_ON);
             }
             else
             {
@@ -348,7 +350,7 @@ void display_date(u8 line, u8 update)
             }
 
             // Display "." to separate day and month
-            display_symbol(switch_seg(line, LCD_SEG_L1_DP1, LCD_SEG_L2_DP), SEG_ON);
+//            display_symbol(switch_seg(line, LCD_SEG_L1_DP1, LCD_SEG_L2_DP), SEG_ON);
         }
         else
         {
@@ -395,10 +397,12 @@ void display_date(u8 line, u8 update)
                     		int d = sDate.day;
                     		y -= m < 3;
                     		int DoW = (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;            				// Display 2 letter-day
-                    		display_chars(switch_seg(line, LCD_SEG_L1_3_0, LCD_SEG_L2_4_0), TwoLetterDayStr[DoW], SEG_ON);
+                    		display_chars(switch_seg(line, LCD_SEG_L1_3_0, LCD_SEG_L2_4_2), TwoLetterDayStr[DoW], SEG_ON);
+                    		// display space
+//                    		display_chars(switch_seg(line, LCD_SEG_L1_3_2, LCD_SEG_L2_2_0), " ", SEG_ON);
                     		// display day
                     		str = int_to_array(sDate.day, 2, 0);
-                    		display_chars(switch_seg(line, LCD_SEG_L1_3_0, LCD_SEG_L2_2_0), str, SEG_ON);
+                            display_chars(switch_seg(line, LCD_SEG_L1_1_0, LCD_SEG_L2_1_0), str, SEG_ON);
                 			// Clear "."
                     		display_symbol(switch_seg(line, LCD_SEG_L1_DP1, LCD_SEG_L2_DP), SEG_OFF);
             			}

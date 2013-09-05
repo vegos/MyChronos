@@ -61,6 +61,7 @@
 #include "alarm.h"
 #include "temperature.h"
 #include "altitude.h"
+#include "buzzer.h"
 
 // *************************************************************************************************
 // Prototypes section
@@ -241,6 +242,7 @@ void start_simpliciti_tx_only(simpliciti_mode_t mode)
     display_symbol(LCD_ICON_BEEPER1, SEG_ON_BLINK_ON);
     display_symbol(LCD_ICON_BEEPER2, SEG_ON_BLINK_ON);
     display_symbol(LCD_ICON_BEEPER3, SEG_ON_BLINK_ON);
+
 
     // Debounce button event
     Timer0_A4_Delay(CONV_MS_TO_TICKS(BUTTONS_DEBOUNCE_TIME_OUT));
@@ -583,6 +585,10 @@ void simpliciti_sync_decode_ap_cmd_callback(void)
 //            update_pressure_table(sAlt.altitude, sAlt.pressure, sAlt.temperature);
 
             display_chars(LCD_SEG_L2_5_0, (u8 *) "  DONE", SEG_ON);
+
+            // Make a buzzer to indicate that watch is synchronized
+            start_buzzer(2, BUZZER_ON_TICKS, BUZZER_OFF_TICKS);
+
             sRFsmpl.display_sync_done = 1;
 
             break;

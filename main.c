@@ -123,6 +123,7 @@ void display_update(void);
 void idle_loop(void);
 void configure_ports(void);
 void read_calibration_values(void);
+void TurnOnBacklight(void);
 
 // *************************************************************************************************
 // Defines section
@@ -339,14 +340,18 @@ void init_global_variables(void)
     // set menu pointers to default menu items
     ptrMenu_L1 = &menu_L1_Time;
     //      ptrMenu_L1 = &menu_L1_Alarm;
+    //      ptrMenu_L1 = &menu_L1_Heartrate;
+    //      ptrMenu_L1 = &menu_L1_Speed;
     //      ptrMenu_L1 = &menu_L1_Temperature;
     //      ptrMenu_L1 = &menu_L1_Altitude;
     //      ptrMenu_L1 = &menu_L1_Acceleration;
     ptrMenu_L2 = &menu_L2_Date;
     //      ptrMenu_L2 = &menu_L2_Stopwatch;
     //      ptrMenu_L2 = &menu_L2_Rf;
-    //      ptrMenu_L2 = &menu_L2_Ctrl;
+    //      ptrMenu_L2 = &menu_L2_Ppt;
     //      ptrMenu_L2 = &menu_L2_Sync;
+    //      ptrMenu_L2 = &menu_L2_Distance;
+    //      ptrMenu_L2 = &menu_L2_Calories;
     //      ptrMenu_L2 = &menu_L2_Battery;
     //      ptrMenu_L2 = &menu_L2_RFBSL;
 
@@ -421,11 +426,8 @@ void wakeup_event(void)
     // If buttons are locked, only display "buttons are locked" message
     if (button.all_flags && sys.flag.lock_buttons)
     {
-// -- magla -- TURN ON BACKLIGHT --
-sButton.backlight_status = 1;
-sButton.backlight_timeout = 0;
-P2OUT |= BUTTON_BACKLIGHT_PIN;
-P2DIR |= BUTTON_BACKLIGHT_PIN;
+    	// -- magla -- TURN ON BACKLIGHT --
+    	TurnOnBacklight();
 
         // Show "buttons are locked" message synchronously with next second tick
         if (!(BUTTON_NUM_IS_PRESSED && BUTTON_DOWN_IS_PRESSED))
@@ -467,11 +469,8 @@ P2DIR |= BUTTON_BACKLIGHT_PIN;
         // (Short) Advance to next menu item
         if (button.flag.star)
         {
-// -- magla -- TURN ON BACKLIGHT --
-sButton.backlight_status = 1;
-sButton.backlight_timeout = 0;
-P2OUT |= BUTTON_BACKLIGHT_PIN;
-P2DIR |= BUTTON_BACKLIGHT_PIN;
+        	// -- magla -- TURN ON BACKLIGHT --
+        	TurnOnBacklight();
 
             // Clean up display before activating next menu item
             fptr_lcd_function_line1(LINE1, DISPLAY_LINE_CLEAR);
@@ -492,11 +491,8 @@ P2DIR |= BUTTON_BACKLIGHT_PIN;
         // (Short) Advance to next menu item
         else if (button.flag.num)
         {
-// -- magla -- TURN ON BACKLIGHT --
-sButton.backlight_status = 1;
-sButton.backlight_timeout = 0;
-P2OUT |= BUTTON_BACKLIGHT_PIN;
-P2DIR |= BUTTON_BACKLIGHT_PIN;
+        	// -- magla -- TURN ON BACKLIGHT --
+        	TurnOnBacklight();
 
             // Clear rfBSL confirmation flag
             rfBSL_button_confirmation = 0;
@@ -520,11 +516,8 @@ P2DIR |= BUTTON_BACKLIGHT_PIN;
         // Activate user function for Line1 menu item
         else if (button.flag.up)
         {
-// -- magla -- TURN ON BACKLIGHT --
-sButton.backlight_status = 1;
-sButton.backlight_timeout = 0;
-P2OUT |= BUTTON_BACKLIGHT_PIN;
-P2DIR |= BUTTON_BACKLIGHT_PIN;
+        	// -- magla -- TURN ON BACKLIGHT --
+        	TurnOnBacklight();
 
             // Call direct function
             ptrMenu_L1->sx_function(LINE1);
@@ -539,11 +532,8 @@ P2DIR |= BUTTON_BACKLIGHT_PIN;
         // Activate user function for Line2 menu item
         else if (button.flag.down)
         {
-// -- magla -- TURN ON BACKLIGHT --
-sButton.backlight_status = 1;
-sButton.backlight_timeout = 0;
-P2OUT |= BUTTON_BACKLIGHT_PIN;
-P2DIR |= BUTTON_BACKLIGHT_PIN;
+        	// -- magla -- TURN ON BACKLIGHT --
+        	TurnOnBacklight();
 
             if (ptrMenu_L2 == &menu_L2_RFBSL)
             {
@@ -784,5 +774,13 @@ void read_calibration_values(void)
             sAlt.altitude_offset = 0;
         }
     }
+}
+
+void TurnOnBacklight(void)
+{
+	sButton.backlight_status = 1;
+	sButton.backlight_timeout = 0;
+	P2OUT |= BUTTON_BACKLIGHT_PIN;
+	P2DIR |= BUTTON_BACKLIGHT_PIN;
 }
 
