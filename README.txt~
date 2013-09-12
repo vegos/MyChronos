@@ -30,9 +30,8 @@ Line 1:
 - Accelerometer Z-Axis (Up for X-Axis or Y-Axis)
 
 Line 2:
-- Date (Down for Year, 3-letters day of week name or 3-letters month name or 
+- Date (Up for Year, 3-letters day of week name or 3-letters month name or 
   2-letters day-of-week or day)
-- Temperature (Down for Max, Min measurement)
 - Battery Voltage
 - Ctrl (Control: old PPT mode, for use with my custom python script)
 - Sync (for synching time with my ntp -- it does not sync altitude & temperature)

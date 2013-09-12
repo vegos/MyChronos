@@ -200,7 +200,7 @@ const struct menu menu_L2_Date = {
 
 // Line1 - Temperature
 const struct menu menu_L2_Temperature = {
-    FUNCTION(dummy),                  // direct function
+    FUNCTION(sx_temperature),                  // direct function
     FUNCTION(mx_temperature),         // sub menu function
     FUNCTION(display_temperature),    // display function
     FUNCTION(update_temperature),     // new display data
