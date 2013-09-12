@@ -38,12 +38,14 @@ Line 2:
 - Sync (for synching time with my ntp -- it does not sync altitude & temperature)
 - Accel (old ACC. Not in use by me)
 - Stopwatch
-- RESET (old RFBSL, in my white-PCB is not working)
+- RESET (Down for resetting the temperature max/min statistics)
+- RFBSL (in my white-PCB is not working but I leave it for now...)
 
 
 
 To Do:
 -----
 
-Add some statistics like Altitude/Temperature High/Low/Average,
-Acceleration (Peak, free-fall counter, maximum acceleration/difference from start).
+Add some statistics like Altitude Min/Max/Average, Temperature Average,
+Acceleration Peak, free-fall counter, maximum acceleration/difference from start
+etc...

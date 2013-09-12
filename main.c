@@ -111,6 +111,7 @@
 #include "rfsimpliciti.h"
 #include "simpliciti.h"
 #include "rfbsl.h"
+#include "resetstats.h"
 #include "test.h"
 
 // *************************************************************************************************
@@ -366,6 +367,14 @@ void init_global_variables(void)
     display.all_flags = 0;
     message.all_flags = 0;
 
+    // Init default values for temperature max/min
+    sTemp.tempMax = 999;
+    sTemp.tempMin = 999;
+
+    // Init default values for altitude max/min
+    sAlt.altMax = 9999;
+    sAlt.altMin = 9999;
+
     // Force full display update when starting up
     display.flag.full_update = 1;
 
@@ -496,6 +505,7 @@ void wakeup_event(void)
 
             // Clear rfBSL confirmation flag
             rfBSL_button_confirmation = 0;
+            reset_button_confirmation = 0;
 
             // Clean up display before activating next menu item
             fptr_lcd_function_line2(LINE2, DISPLAY_LINE_CLEAR);

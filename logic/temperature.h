@@ -61,8 +61,10 @@ struct temp
 {
 	u8 display;					// Toggles view
     menu_t state;               // MENU_ITEM_NOT_VISIBLE, MENU_ITEM_VISIBLE
-    s16 degrees;                // Temperature (Â°C) in 2.1 format
-    s16 offset;                 // User set calibration value (Â°C) in 2.1 format
+    s16 degrees;                // Temperature (°C) in 2.1 format
+    s16 offset;                 // User set calibration value (°C) in 2.1 format
+    s16 tempMax;				// Maximum Temperature
+    s16 tempMin;				// Minimum Temperature
 };
 extern struct temp sTemp;
 

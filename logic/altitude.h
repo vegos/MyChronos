@@ -67,7 +67,10 @@ struct alt
     s16 altitude;                                  // Altitude (m)
     s16 altitude_offset;                           // Altitude offset stored during calibration
     u16 timeout;                                   // Timeout
+    s16 altMax;									   // Maximum Altitude
+    s16 altMin;									   // Minimum Altitude
 };
+
 extern struct alt sAlt;
 
 // *************************************************************************************************

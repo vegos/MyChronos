@@ -106,7 +106,7 @@ void display_rfbsl(u8 line, u8 update)
     {
         if (rfBSL_button_confirmation == 0)
         {
-            display_chars(LCD_SEG_L2_5_0, (u8 *) " RESET", SEG_ON);
+            display_chars(LCD_SEG_L2_5_0, (u8 *) " RFBSL", SEG_ON);
         }
         else if (rfBSL_button_confirmation < 2)
         {

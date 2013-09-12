@@ -33,61 +33,21 @@
 //
 // *************************************************************************************************
 
-#ifndef MENU_H_
-#define MENU_H_
-
-// *************************************************************************************************
-// Include section
+#ifndef RESETSTATS_H_
+#define RESETSTATS_H_
 
 // *************************************************************************************************
 // Prototypes section
+extern void sx_reset(u8 line);
+extern void display_reset(u8 line, u8 update);
 
 // *************************************************************************************************
 // Defines section
 
-struct menu
-{
-    // Pointer to direct function (start, stop etc)
-    void (*sx_function)(u8 line);
-    // Pointer to sub menu function (change settings, reset counter etc)
-    void (*mx_function)(u8 line);
-    // Pointer to display function
-    void (*display_function)(u8 line, u8 mode);
-    // Display update trigger
-    u8 (*display_update)(void);
-    // Pointer to next menu item
-    const struct menu *next;
-};
+
 
 // *************************************************************************************************
 // Global Variable section
+extern u8 reset_button_confirmation;
 
-// *************************************************************************************************
-// Extern section
-
-// Line1 navigation
-extern const struct menu menu_L1_Time;
-extern const struct menu menu_L1_Altitude;
-extern const struct menu menu_L1_Baro;
-extern const struct menu menu_L1_Alarm;
-extern const struct menu menu_L1_Acceleration;
-//extern const struct menu menu_L1_Heartrate;
-//extern const struct menu menu_L1_Speed;
-
-// Line2 navigation
-extern const struct menu menu_L2_Date;
-extern const struct menu menu_L2_Temperature;
-extern const struct menu menu_L2_Battery;
-//extern const struct menu menu_L2_CalDist;
-extern const struct menu menu_L2_Ctrl;
-extern const struct menu menu_L2_Rf;
-extern const struct menu menu_L2_Sync;
-extern const struct menu menu_L2_Stopwatch;
-extern const struct menu menu_L2_Reset;
-extern const struct menu menu_L2_RFBSL;
-
-// Pointers to current menu item
-extern const struct menu *ptrMenu_L1;
-extern const struct menu *ptrMenu_L2;
-
-#endif                          /*MENU_H_ */
+#endif                          /*RFBSL_H_ */

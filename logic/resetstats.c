@@ -32,62 +32,81 @@
 //        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 // *************************************************************************************************
+// Wireless Update functions.
+// *************************************************************************************************
 
-#ifndef MENU_H_
-#define MENU_H_
 
 // *************************************************************************************************
 // Include section
 
-// *************************************************************************************************
-// Prototypes section
+// system
+#include "project.h"
 
-// *************************************************************************************************
-// Defines section
+// driver
+#include "display.h"
+#include "ports.h"
+#include "temperature.h"
+#include "altitude.h"
 
-struct menu
-{
-    // Pointer to direct function (start, stop etc)
-    void (*sx_function)(u8 line);
-    // Pointer to sub menu function (change settings, reset counter etc)
-    void (*mx_function)(u8 line);
-    // Pointer to display function
-    void (*display_function)(u8 line, u8 mode);
-    // Display update trigger
-    u8 (*display_update)(void);
-    // Pointer to next menu item
-    const struct menu *next;
-};
+// logic
+//#include "rfbsl.h"
+//#include "bluerobin.h"
+//#include "rfsimpliciti.h"
 
 // *************************************************************************************************
 // Global Variable section
+u8 reset_button_confirmation;
 
 // *************************************************************************************************
-// Extern section
+// @fn          sx_rfbsl
+// @brief       This functions starts the RFBSL
+// @param       line            LINE1, LINE2
+// @return      none
+// *************************************************************************************************
+void sx_reset(u8 line)
+{
+    reset_button_confirmation++;
 
-// Line1 navigation
-extern const struct menu menu_L1_Time;
-extern const struct menu menu_L1_Altitude;
-extern const struct menu menu_L1_Baro;
-extern const struct menu menu_L1_Alarm;
-extern const struct menu menu_L1_Acceleration;
-//extern const struct menu menu_L1_Heartrate;
-//extern const struct menu menu_L1_Speed;
+    if (reset_button_confirmation == 2)
+    {
+        // Before entering RFBSL clear the LINE1 Symbols
+//        display_symbol(LCD_SYMB_AM, SEG_OFF);
 
-// Line2 navigation
-extern const struct menu menu_L2_Date;
-extern const struct menu menu_L2_Temperature;
-extern const struct menu menu_L2_Battery;
-//extern const struct menu menu_L2_CalDist;
-extern const struct menu menu_L2_Ctrl;
-extern const struct menu menu_L2_Rf;
-extern const struct menu menu_L2_Sync;
-extern const struct menu menu_L2_Stopwatch;
-extern const struct menu menu_L2_Reset;
-extern const struct menu menu_L2_RFBSL;
+//        clear_line(LINE2);
 
-// Pointers to current menu item
-extern const struct menu *ptrMenu_L1;
-extern const struct menu *ptrMenu_L2;
+        // Write RAM to indicate we will be downloading the RAM Updater first
+    	display_chars(LCD_SEG_L2_5_0, (u8 *) "  DONE", SEG_ON);
 
-#endif                          /*MENU_H_ */
+        // Reset Values
+        sTemp.tempMax=999;
+        sTemp.tempMin=999;
+        sAlt.altMax=9999;
+        sAlt.altMin=9999;
+
+        reset_button_confirmation=0;
+    }
+}
+
+// *************************************************************************************************
+// @fn          display_rfbsl
+// @brief       RFBSL display routine.
+// @param       u8 line                 LINE2
+//                              u8 update               DISPLAY_LINE_UPDATE_FULL
+// @return      none
+// *************************************************************************************************
+void display_reset(u8 line, u8 update)
+{
+    if (update == DISPLAY_LINE_UPDATE_FULL)
+    {
+        if (reset_button_confirmation == 0)
+        {
+        	display_chars(LCD_SEG_L2_5_0, (u8 *) " RESET", SEG_ON);
+        }
+        else if (reset_button_confirmation < 2)
+        {
+            // Request one more button press to confirm rfBSL call
+            display_chars(LCD_SEG_L2_5_0, (u8 *) " CONF", SEG_ON);
+        }
+    }
+}
+

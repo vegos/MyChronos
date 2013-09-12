@@ -59,6 +59,7 @@
 #include "acceleration.h"
 #include "rfbsl.h"
 #include "baro.h"
+#include "resetstats.h"
 
 // *************************************************************************************************
 // Defines section
@@ -262,8 +263,17 @@ const struct menu menu_L2_Stopwatch = {
     FUNCTION(mx_stopwatch),           // sub menu function
     FUNCTION(display_stopwatch),      // display function
     FUNCTION(update_stopwatch),       // new display data
+    &menu_L2_Reset,
+};
+// Line2 - RESET STATS
+const struct menu menu_L2_Reset = {
+    FUNCTION(sx_reset),               // direct function
+    FUNCTION(dummy),                  // sub menu function
+    FUNCTION(display_reset),          // display function
+    FUNCTION(update_time),            // new display data
     &menu_L2_RFBSL,
 };
+
 // Line2 - RFBSL
 const struct menu menu_L2_RFBSL = {
     FUNCTION(sx_rfbsl),               // direct function
