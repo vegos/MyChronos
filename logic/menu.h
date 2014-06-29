@@ -67,23 +67,23 @@ struct menu
 
 // Line1 navigation
 extern const struct menu menu_L1_Time;
+extern const struct menu menu_L1_Temperature;
 extern const struct menu menu_L1_Altitude;
 extern const struct menu menu_L1_Baro;
 extern const struct menu menu_L1_Alarm;
+// extern const struct menu menu_L1_Altitude;
+// extern const struct menu menu_L1_Heartrate;
+// extern const struct menu menu_L1_Speed;
 extern const struct menu menu_L1_Acceleration;
-//extern const struct menu menu_L1_Heartrate;
-//extern const struct menu menu_L1_Speed;
 
 // Line2 navigation
 extern const struct menu menu_L2_Date;
-extern const struct menu menu_L2_Temperature;
-extern const struct menu menu_L2_Battery;
-//extern const struct menu menu_L2_CalDist;
-extern const struct menu menu_L2_Ctrl;
-extern const struct menu menu_L2_Rf;
-extern const struct menu menu_L2_Sync;
 extern const struct menu menu_L2_Stopwatch;
-extern const struct menu menu_L2_Reset;
+extern const struct menu menu_L2_Battery;
+extern const struct menu menu_L2_RFAccel;
+extern const struct menu menu_L2_Ctrl;
+extern const struct menu menu_L2_Sync;
+// extern const struct menu menu_L2_CalDist;
 extern const struct menu menu_L2_RFBSL;
 
 // Pointers to current menu item

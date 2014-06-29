@@ -65,6 +65,15 @@ void conv_24H_to_12H(u8 * hours24, u8 * hours12, u8 * timeAMorPM);
 
 // *************************************************************************************************
 // Defines section
+#define DAILY_CORRECTION_SEC_DEFAULT     (0)  // 0..59 seconds
+#define WEEKLY_CORRECTION_SEC_DEFAULT    (0)  // sum of daily+weekly must be in range of 0..59 seconds!
+#define DST_NO      0
+#define DST_AUTO    1
+u8 TimeCorrectionFlag;
+u8 DST_CorrectionFlag;
+u8 DST_AutoFlag;
+s8 DailyCorr;
+s8 WeeklyCorr;
 
 // *************************************************************************************************
 // Global Variable section
@@ -92,7 +101,7 @@ void reset_clock(void)
     sTime.system_time = 0;
 
     // Set main 24H time to start value
-    sTime.hour = 12;
+    sTime.hour = 0;
     sTime.minute = 0;
     sTime.second = 0;
 
@@ -101,6 +110,14 @@ void reset_clock(void)
 
     // Reset timeout detection
     sTime.last_activity = 0;
+
+	// Reset Time correction & DST flags
+	TimeCorrectionFlag = 0;
+	DST_CorrectionFlag = 0;
+
+    DST_AutoFlag = DST_NO;
+    DailyCorr  = (s8)DAILY_CORRECTION_SEC_DEFAULT;
+    WeeklyCorr = (s8)WEEKLY_CORRECTION_SEC_DEFAULT;
 }
 
 // *************************************************************************************************
@@ -142,6 +159,104 @@ void clock_tick(void)
             {
                 sTime.hour = 0;
                 add_day();
+			    if(DST_AutoFlag == DST_AUTO)
+			    {
+			        if (sys.flag.use_metric_units)      // Europe
+			        {
+			            // Last Sunday in March
+			            if((sDate.month == 3) && (sDate.day >= 25) && (sDate.DayOfWeek == 0))
+			            {
+			                DST_CorrectionFlag = 1;     // Switch to DST during summer
+			            }
+			            // Last Sunday in October
+			            if((sDate.month == 10) && (sDate.day >= 25) && (sDate.DayOfWeek == 0))
+			            {
+			                DST_CorrectionFlag = 2;     // Switch to normal time during winter
+			            }
+			        }
+			        else    // USA
+			        {
+			            // Second Sunday in March
+			            if((sDate.month == 03) && (sDate.day >= 8) && (sDate.day <= 14) && (sDate.DayOfWeek == 0))
+			            {
+			                DST_CorrectionFlag = 3;     // Switch to DST during summer
+			            }
+			            // First Sunday in November
+			            if((sDate.month == 11) && (sDate.day <= 7) && (sDate.DayOfWeek == 0))
+			            {
+			                DST_CorrectionFlag = 4;     // Switch to normal time during winter
+			            }
+			        }
+			    }
+            }
+        }
+        // Time correction
+        if(TimeCorrectionFlag != 0)
+        {
+            // Daily correction
+            if(TimeCorrectionFlag == 1)
+            {
+                if((DailyCorr < 0) && (sTime.second == (u8)(DailyCorr * (-1))))
+                {
+                    sTime.second = 0;
+                    TimeCorrectionFlag = 0;
+                }
+                if(DailyCorr > 0)
+                {
+                    sTime.second = DailyCorr;
+                    TimeCorrectionFlag = 0;
+                }
+                if(DailyCorr == 0){ TimeCorrectionFlag = 0; }
+            }
+            // Weekly correction
+            if(TimeCorrectionFlag == 2)
+            {
+                s8 WeeklyCorrTmp;
+
+                WeeklyCorrTmp = WeeklyCorr + DailyCorr;
+
+                if((WeeklyCorrTmp < 0) && (sTime.second == (u8)(WeeklyCorrTmp * (-1))))
+                {
+                    sTime.second = 0;
+                    TimeCorrectionFlag = 0;
+                }
+                if(WeeklyCorr > 0)
+                {
+                    sTime.second = (u8)WeeklyCorrTmp;
+                    TimeCorrectionFlag = 0;
+                }
+                if(WeeklyCorr == 0) { TimeCorrectionFlag = 0; }
+            }
+        }
+
+        // DST (Daylight saving time) correction
+        if(DST_CorrectionFlag != 0)
+        {
+            // Europe
+            if((DST_CorrectionFlag == 1) && (sTime.hour == 2))
+            {
+                DST_CorrectionFlag = 0;
+    			sTime.hour++;
+    			sTime.drawFlag = 3;
+            }
+            if((DST_CorrectionFlag == 2) && (sTime.hour == 3))
+            {
+                DST_CorrectionFlag = 0;
+    			sTime.hour--;
+    			sTime.drawFlag = 3;
+            }
+            // USA
+            if((DST_CorrectionFlag == 3) && (sTime.hour == 2))
+            {
+                DST_CorrectionFlag = 0;
+    			sTime.hour++;
+    			sTime.drawFlag = 3;
+            }
+            if((DST_CorrectionFlag == 4) && (sTime.hour == 2))
+            {
+                DST_CorrectionFlag = 0;
+    			sTime.hour--;
+    			sTime.drawFlag = 3;
             }
         }
     }

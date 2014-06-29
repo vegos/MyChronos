@@ -237,10 +237,7 @@ u16 bmp_ps_get_temp(void)
     temperature = ((bmp_param_b5 + 8) / 16);  // temperature in 0.1°C
 
     // Convert from °C to K
-    if (temperature < 0)
-        kelvin = 2732 - temperature;
-    else
-        kelvin = temperature + 2732;
+    kelvin = 2732 + temperature;
 
     return (kelvin);
 }

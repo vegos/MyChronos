@@ -54,12 +54,11 @@
 #include "temperature.h"
 #include "altitude.h"
 #include "battery.h"
-#include "bluerobin.h"
+//#include "bluerobin.h"
 #include "rfsimpliciti.h"
 #include "acceleration.h"
 #include "rfbsl.h"
 #include "baro.h"
-#include "resetstats.h"
 
 // *************************************************************************************************
 // Defines section
@@ -72,9 +71,6 @@ const struct menu *ptrMenu_L2 = NULL;
 
 // *************************************************************************************************
 // Global Variable section
-
-
-
 
 void display_nothing(u8 line, u8 update)
 {
@@ -129,6 +125,15 @@ const struct menu menu_L1_Time = {
     FUNCTION(mx_time),                // sub menu function
     FUNCTION(display_time),           // display function
     FUNCTION(update_time),            // new display data
+    &menu_L1_Temperature,
+};
+
+// Line1 - Temperature
+const struct menu menu_L1_Temperature = {
+    FUNCTION(dummy),                  // direct function
+    FUNCTION(mx_temperature),         // sub menu function
+    FUNCTION(display_temperature),    // display function
+    FUNCTION(update_temperature),     // new display data
     &menu_L1_Altitude,
 };
 
@@ -150,7 +155,6 @@ const struct menu menu_L1_Baro = {
     &menu_L1_Alarm,
 };
 
-
 // Line1 - Alarm
 const struct menu menu_L1_Alarm = {
     FUNCTION(sx_alarm),               // direct function
@@ -160,35 +164,16 @@ const struct menu menu_L1_Alarm = {
     &menu_L1_Acceleration,
 };
 
+
 // Line1 - Acceleration
 const struct menu menu_L1_Acceleration = {
     FUNCTION(sx_acceleration),        // direct function
     FUNCTION(dummy),                  // sub menu function
     FUNCTION(display_acceleration),   // display function
     FUNCTION(update_acceleration),    // new display data
-//    &menu_L1_Heartrate,
     &menu_L1_Time,
 };
 
-/*
-// Line1 - Heart Rate
-const struct menu menu_L1_Heartrate = {
-    FUNCTION(sx_bluerobin),           // direct function
-    FUNCTION(mx_bluerobin),           // sub menu function
-    FUNCTION(display_heartrate),      // display function
-    FUNCTION(update_time),            // new display data
-    &menu_L1_Speed,
-};
-
-// Line1 - Speed
-const struct menu menu_L1_Speed = {
-    FUNCTION(dummy),                  // direct function
-    FUNCTION(dummy),                  // sub menu function
-    FUNCTION(display_speed),          // display function
-    FUNCTION(update_time),            // new display data
-    &menu_L1_Time,
-};
-*/
 
 // Line2 - Date
 const struct menu menu_L2_Date = {
@@ -196,18 +181,8 @@ const struct menu menu_L2_Date = {
     FUNCTION(mx_date),                // sub menu function
     FUNCTION(display_date),           // display function
     FUNCTION(update_date),            // new display data
-    &menu_L2_Temperature,
-};
-
-// Line1 - Temperature
-const struct menu menu_L2_Temperature = {
-    FUNCTION(sx_temperature),                  // direct function
-    FUNCTION(mx_temperature),         // sub menu function
-    FUNCTION(display_temperature),    // display function
-    FUNCTION(update_temperature),     // new display data
     &menu_L2_Battery,
 };
-
 
 // Line2 - Battery
 const struct menu menu_L2_Battery = {
@@ -215,41 +190,30 @@ const struct menu menu_L2_Battery = {
     FUNCTION(dummy),                  // sub menu function
     FUNCTION(display_battery_V),      // display function
     FUNCTION(update_battery_voltage), // new display data
-//    &menu_L2_CalDist,
-    &menu_L2_Ctrl,
-};
-
-/*
-// Line2 - Calories/Distance
-const struct menu menu_L2_CalDist = {
-    FUNCTION(sx_caldist),             // direct function
-    FUNCTION(mx_caldist),             // sub menu function
-    FUNCTION(display_caldist),        // display function
-    FUNCTION(update_time),            // new display data
-    &menu_L2_Rf,
-};
-*/
-
-// Line2 - CONTROL (button events via SimpliciTI)
-const struct menu menu_L2_Ctrl = {
-    FUNCTION(sx_ctrl),                 // direct function
-    FUNCTION(dummy),                  // sub menu function
-    FUNCTION(display_ctrl),            // display function
-    FUNCTION(update_time),            // new display data
     &menu_L2_Sync,
 };
 
-// Line2 - SYNC (synchronization/data download via SimpliciTI)
+// Line2 - SXNC (synchronization/data download via SimpliciTI)
 const struct menu menu_L2_Sync = {
     FUNCTION(sx_sync),                // direct function
     FUNCTION(dummy),                  // sub menu function
     FUNCTION(display_sync),           // display function
     FUNCTION(update_time),            // new display data
-    &menu_L2_Rf,
+    &menu_L2_Ctrl,
+};
+
+
+// Line2 - PPT (button events via SimpliciTI)
+const struct menu menu_L2_Ctrl = {
+    FUNCTION(sx_ctrl),                 // direct function
+    FUNCTION(dummy),                  // sub menu function
+    FUNCTION(display_ctrl),            // display function
+    FUNCTION(update_time),            // new display data
+    &menu_L2_RFAccel,
 };
 
 // Line2 - ACC (acceleration data + button events via SimpliciTI)
-const struct menu menu_L2_Rf = {
+const struct menu menu_L2_RFAccel = {
     FUNCTION(sx_rf),                  // direct function
     FUNCTION(dummy),                  // sub menu function
     FUNCTION(display_rf),             // display function
@@ -263,14 +227,6 @@ const struct menu menu_L2_Stopwatch = {
     FUNCTION(mx_stopwatch),           // sub menu function
     FUNCTION(display_stopwatch),      // display function
     FUNCTION(update_stopwatch),       // new display data
-    &menu_L2_Reset,
-};
-// Line2 - RESET STATS
-const struct menu menu_L2_Reset = {
-    FUNCTION(sx_reset),               // direct function
-    FUNCTION(dummy),                  // sub menu function
-    FUNCTION(display_reset),          // display function
-    FUNCTION(update_time),            // new display data
     &menu_L2_RFBSL,
 };
 

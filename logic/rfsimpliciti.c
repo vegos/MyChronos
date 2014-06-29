@@ -157,7 +157,7 @@ void sx_rf(u8 line)
 }
 
 // *************************************************************************************************
-// @fn          sx_ppt
+// @fn          sx_ctrl
 // @brief       Start SimpliciTI. Button DOWN connects/disconnects to access point.
 // @param       u8 line         LINE2
 // @return      none
@@ -243,7 +243,6 @@ void start_simpliciti_tx_only(simpliciti_mode_t mode)
     display_symbol(LCD_ICON_BEEPER2, SEG_ON_BLINK_ON);
     display_symbol(LCD_ICON_BEEPER3, SEG_ON_BLINK_ON);
 
-
     // Debounce button event
     Timer0_A4_Delay(CONV_MS_TO_TICKS(BUTTONS_DEBOUNCE_TIME_OUT));
 
@@ -328,7 +327,7 @@ void display_rf(u8 line, u8 update)
 }
 
 // *************************************************************************************************
-// @fn          display_ppt
+// @fn          display_ctrl
 // @brief       SimpliciTI display routine.
 // @param       u8 line                 LINE2
 //                              u8 update               DISPLAY_LINE_UPDATE_FULL
@@ -547,7 +546,6 @@ void start_simpliciti_sync(void)
 void simpliciti_sync_decode_ap_cmd_callback(void)
 {
     u8 i;
-// ---- removed magla -- not synching altitude & temperature
 //    s16 t1, offset;
 
     // Default behaviour is to send no reply packets
@@ -574,23 +572,28 @@ void simpliciti_sync_decode_ap_cmd_callback(void)
             sDate.day = simpliciti_data[7];
             sAlarm.hour = simpliciti_data[8];
             sAlarm.minute = simpliciti_data[9];
-// ---- removed magla -- not synching altitude & temperature
-//            // Set temperature and temperature offset
-//            t1 = (s16) ((simpliciti_data[10] << 8) + simpliciti_data[11]);
-//            offset = t1 - (sTemp.degrees - sTemp.offset);
-//            sTemp.offset = offset;
-//            sTemp.degrees = t1;
-//            // Set altitude
-//            sAlt.altitude = (s16) ((simpliciti_data[12] << 8) + simpliciti_data[13]);
-//            update_pressure_table(sAlt.altitude, sAlt.pressure, sAlt.temperature);
+//            // Reset offset to 0
+//            sTemp.offset = 0;
+//            sAlt.altitude_offset = 0;
+/* --- REMOVED - Not synching altitude & temperature
 
+            // Set temperature and temperature offset
+            t1 = (s16) ((simpliciti_data[10] << 8) + simpliciti_data[11]);
+            offset = t1 - (sTemp.degrees - sTemp.offset);
+            sTemp.offset = offset;
+            sTemp.degrees = t1;
+            // Set altitude
+            sAlt.altitude = (s16) ((simpliciti_data[12] << 8) + simpliciti_data[13]);
+            update_pressure_table(sAlt.altitude, sAlt.pressure, sAlt.temperature);
+*/
             display_chars(LCD_SEG_L2_5_0, (u8 *) "  DONE", SEG_ON);
-
             // Make a buzzer to indicate that watch is synchronized
             start_buzzer(2, BUZZER_ON_TICKS, BUZZER_OFF_TICKS);
 
             sRFsmpl.display_sync_done = 1;
 
+// -- magla -- Exit sync mode
+            simpliciti_flag |= SIMPLICITI_TRIGGER_STOP;
             break;
 
         case SYNC_AP_CMD_GET_MEMORY_BLOCKS_MODE_1:

@@ -49,7 +49,6 @@ extern void temperature_measurement(u8 filter);
 
 // menu functions
 extern void mx_temperature(u8 line);
-extern void sx_temperature(u8 line);
 extern void display_temperature(u8 line, u8 update);
 
 // *************************************************************************************************
@@ -59,12 +58,9 @@ extern void display_temperature(u8 line, u8 update);
 // Global Variable section
 struct temp
 {
-	u8 display;					// Toggles view
     menu_t state;               // MENU_ITEM_NOT_VISIBLE, MENU_ITEM_VISIBLE
     s16 degrees;                // Temperature (°C) in 2.1 format
     s16 offset;                 // User set calibration value (°C) in 2.1 format
-    s16 tempMax;				// Maximum Temperature
-    s16 tempMin;				// Minimum Temperature
 };
 extern struct temp sTemp;
 

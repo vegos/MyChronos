@@ -303,3 +303,4 @@ void display_acceleration(u8 line, u8 update)
         }
     }
 }
+

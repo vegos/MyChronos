@@ -1,4 +1,4 @@
-// *************************************************************************************************
+ // *************************************************************************************************
 //
 //      Copyright (C) 2009 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -54,7 +54,7 @@ extern void display_altitude(u8 line, u8 update);
 
 // *************************************************************************************************
 // Defines section
-#define ALTITUDE_MEASUREMENT_TIMEOUT    (15 * 60u) // Stop altitude measurement after 15 minutes to
+#define ALTITUDE_MEASUREMENT_TIMEOUT    (60 * 60u) // Stop altitude measurement after 60 minutes to
                                                    // save battery
 
 // *************************************************************************************************
@@ -67,10 +67,7 @@ struct alt
     s16 altitude;                                  // Altitude (m)
     s16 altitude_offset;                           // Altitude offset stored during calibration
     u16 timeout;                                   // Timeout
-    s16 altMax;									   // Maximum Altitude
-    s16 altMin;									   // Minimum Altitude
 };
-
 extern struct alt sAlt;
 
 // *************************************************************************************************

@@ -84,7 +84,7 @@ extern void (*fptr_lcd_function_line2)(u8 line, u8 update);
 void reset_date(void)
 {
     // Set date
-    sDate.year = 2014;
+    sDate.year = 2015;
     sDate.month = 1;
     sDate.day = 1;
 
@@ -145,6 +145,18 @@ void add_day(void)
     // Add 1 day
     sDate.day++;
 
+
+    if(sDate.DayOfWeek >= 6)
+    {
+        sDate.DayOfWeek = 0;
+    }
+    else
+    {
+        sDate.DayOfWeek++;
+    }
+
+
+
     // Check if day overflows into next month
     if (sDate.day > get_numberOfDays(sDate.month, sDate.year))
     {
@@ -164,6 +176,8 @@ void add_day(void)
 
     // Indicate to display function that new value is available
     display.flag.full_update = 1;
+
+
 }
 
 // *************************************************************************************************
@@ -181,6 +195,7 @@ void mx_date(u8 line)
     s16 max_days;
     u8 *str;
     u8 *str1;
+    s32 DayOfWeek;
 
     // Clear display
     clear_display_all();
@@ -189,6 +204,7 @@ void mx_date(u8 line)
     day = sDate.day;
     month = sDate.month;
     year = sDate.year;
+    DayOfWeek = sDate.DayOfWeek;
 
     // Init value index
     select = 0;
@@ -229,6 +245,7 @@ void mx_date(u8 line)
             sDate.day = day;
             sDate.month = month;
             sDate.year = year;
+            sDate.DayOfWeek = DayOfWeek;
 
             // Full display update is done when returning from function
             break;
@@ -278,6 +295,15 @@ void mx_date(u8 line)
         max_days = get_numberOfDays(month, year);
         if (day > max_days)
             day = max_days;
+
+
+		int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
+		int y = sDate.year;
+		int m = sDate.month;
+		int d = sDate.day;
+		y -= m < 3;
+		sDate.DayOfWeek = (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
+
     }
 
     // Clear button flag
@@ -363,8 +389,8 @@ void display_date(u8 line, u8 update)
         		int d = sDate.day;
         		y -= m < 3;
         		int DoW = (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
+        		sDate.DayOfWeek = DoW;
         		display_chars(switch_seg(line, LCD_SEG_L1_3_0, LCD_SEG_L2_3_0), DayStr[DoW], SEG_ON);
-
         		// Clear "."
         		display_symbol(switch_seg(line, LCD_SEG_L1_DP1, LCD_SEG_L2_DP), SEG_OFF);
         	}
@@ -380,7 +406,7 @@ void display_date(u8 line, u8 update)
         		}
 
         		else
-        			if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_3)
+        			if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_4)
         			{
         				// Display month name
                 		display_chars(switch_seg(line, LCD_SEG_L1_3_0, LCD_SEG_L2_3_0), MonthStr[sDate.month-1], SEG_ON);
@@ -388,7 +414,7 @@ void display_date(u8 line, u8 update)
                 		display_symbol(switch_seg(line, LCD_SEG_L1_DP1, LCD_SEG_L2_DP), SEG_OFF);
         			}
             		else
-            			if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_4)
+            			if (sDate.display == DISPLAY_ALTERNATIVE_VIEW_3)
             			{
                     		// Display Day Of Week name
                     		int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};

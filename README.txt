@@ -9,7 +9,7 @@
  MMMM   MMMM   YYYYYY   CCCCCC   HH   HH RRRR     OOOOO  NN   NN  OOOOO   SSSSS
                    YY
               YY   YY
- ------------- YYYYY ------------------------------- (c)2013, Antonis Maglaras -
+ ------------- YYYYY -------------------------- (c)2013-2014, Antonis Maglaras -
 
 
 
@@ -19,8 +19,8 @@ http://www.ti.com/tool/ez430-chronos&DCMP=Chronos&HQS=Other+OT+chronos
 http://processors.wiki.ti.com/index.php/EZ430-Chronos
 
 
-MyChronos is a modified stock firmware (v.1.7)
-Or to be more specific: At least, it's a way for me to start learning and 
+MyChronos is a modified stock firmware (v.1.7/v.1.8)
+Or to be MORE specific: At least, it's a way for me to start learning and 
 customizing the eZ430 to my needs :)
 
 Note that I have not include almost everything to make it a real import on CCS 
@@ -37,6 +37,7 @@ Menu Structure:
 Line 1:
 - Time (Up for Seconds)
 - Altitude
+- Temperature
 - Barometer in hPa
 - Alarm
 - Accelerometer Z-Axis (Up for X-Axis or Y-Axis)
@@ -44,13 +45,11 @@ Line 1:
 Line 2:
 - Date (Down for Year, 3-letters day of week name or 3-letters month name or 
   2-letters day-of-week or day)
-- Temperature (Down for Max, Min measurement)
 - Battery Voltage
-- Ctrl (Control: old PPT mode, for use with my custom python script)
 - Sync (for synching time with my ntp -- it does not sync altitude &
-  temperature. I guess the watch knows better that my Linux what the
+  temperature. I guess the watch knows better that my Linux machine what the
   temperature and the altitude is...)
-- Accel (old ACC. Not in use by me)
+- Ctrl (Control: old PPT mode, for use with my custom python script)
 - Stopwatch
 - RESET (Down for resetting the temperature max/min statistics)
 - RFBSL (in my white-PCB is not working but I leave it for now...)

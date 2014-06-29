@@ -59,6 +59,7 @@ struct date
     u8 day;
     u8 month;
     u16 year;
+    u8 DayOfWeek;
 };
 extern struct date sDate;
 
@@ -66,6 +67,3 @@ extern struct date sDate;
 // Extern section
 
 #endif                          /*DATE_H_ */
-
-
-

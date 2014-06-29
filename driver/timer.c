@@ -309,7 +309,6 @@ __interrupt void TIMER0_A0_ISR(void)
     {
         // Measure battery voltage to keep track of remaining battery life
         request.flag.voltage_measurement = 1;
-
         // Check if alarm needs to be turned on
         check_alarm();
     }
@@ -335,6 +334,7 @@ __interrupt void TIMER0_A0_ISR(void)
     // Do a temperature measurement each second while menu item is active
     if (is_temp_measurement())
         request.flag.temperature_measurement = 1;
+    // Do a temperature measurement each second while menu item is active
 
     // Do a pressure measurement each second while menu item is active
     if (is_altitude_measurement())

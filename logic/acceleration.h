@@ -51,8 +51,8 @@
 #define ACCEL_MODE_OFF          (0u)
 #define ACCEL_MODE_ON           (1u)
 
-// Stop acceleration measurement after 15 minutes to save battery
-#define ACCEL_MEASUREMENT_TIMEOUT               (15 * 60u)
+// Stop acceleration measurement after 60 minutes to save battery
+#define ACCEL_MEASUREMENT_TIMEOUT               (60 * 60u)
 
 // *************************************************************************************************
 // Global Variable section

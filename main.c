@@ -111,7 +111,6 @@
 #include "rfsimpliciti.h"
 #include "simpliciti.h"
 #include "rfbsl.h"
-#include "resetstats.h"
 #include "test.h"
 
 // *************************************************************************************************
@@ -146,6 +145,10 @@ volatile s_message_flags message;
 
 // Global flag set if Bosch sensors are used
 u8 bmp_used;
+/* Global flag used to adjust the difference in RF settings
+ * (Base frequency and output power)
+ * between Chronos with Black PCB and Chronos with White PCB */
+u8 chronos_black;
 
 // Global radio frequency offset taken from calibration memory
 // Compensates crystal deviation from 26MHz nominal value
@@ -320,10 +323,14 @@ void init_application(void)
     {
         bmp_used = 0;
         cma_ps_init();
+        // Chronos with Black PCB
+        chronos_black = 1;
     }
     else
     {
     	bmp_used = 1;
+    	// Chronos with White PCB
+    	chronos_black = 0;
     }
 }
 
@@ -366,14 +373,6 @@ void init_global_variables(void)
     request.all_flags = 0;
     display.all_flags = 0;
     message.all_flags = 0;
-
-    // Init default values for temperature max/min
-    sTemp.tempMax = 999;
-    sTemp.tempMin = 999;
-
-    // Init default values for altitude max/min
-    sAlt.altMax = 9999;
-    sAlt.altMin = 9999;
 
     // Force full display update when starting up
     display.flag.full_update = 1;
@@ -435,12 +434,12 @@ void wakeup_event(void)
     // If buttons are locked, only display "buttons are locked" message
     if (button.all_flags && sys.flag.lock_buttons)
     {
-    	// -- magla -- TURN ON BACKLIGHT --
-    	TurnOnBacklight();
-
         // Show "buttons are locked" message synchronously with next second tick
         if (!(BUTTON_NUM_IS_PRESSED && BUTTON_DOWN_IS_PRESSED))
         {
+        	// -- magla -- TURN ON BACKLIGHT --
+        	TurnOnBacklight();
+
             message.flag.prepare = 1;
             message.flag.type_locked = 1;
         }
@@ -473,8 +472,7 @@ void wakeup_event(void)
     // Process single button press event (after button was released)
     else if (button.all_flags)
     {
-
-    	// M1 button event ---------------------------------------------------------------------
+        // M1 button event ---------------------------------------------------------------------
         // (Short) Advance to next menu item
         if (button.flag.star)
         {
@@ -505,7 +503,6 @@ void wakeup_event(void)
 
             // Clear rfBSL confirmation flag
             rfBSL_button_confirmation = 0;
-            reset_button_confirmation = 0;
 
             // Clean up display before activating next menu item
             fptr_lcd_function_line2(LINE2, DISPLAY_LINE_CLEAR);
@@ -579,7 +576,6 @@ void wakeup_event(void)
     // Disable idle timeout
     sys.flag.idle_timeout_enabled = 0;
 }
-
 
 // *************************************************************************************************
 // @fn          process_requests
@@ -786,6 +782,7 @@ void read_calibration_values(void)
     }
 }
 
+
 void TurnOnBacklight(void)
 {
 	sButton.backlight_status = 1;
@@ -793,4 +790,3 @@ void TurnOnBacklight(void)
 	P2OUT |= BUTTON_BACKLIGHT_PIN;
 	P2DIR |= BUTTON_BACKLIGHT_PIN;
 }
-

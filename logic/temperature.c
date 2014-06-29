@@ -63,8 +63,6 @@ s16 convert_F_to_C(s16 value);
 // *************************************************************************************************
 // Global Variable section
 struct temp sTemp;
-//u16 tempMax = 999;
-//u16 tempMin = 999;
 
 // *************************************************************************************************
 // Extern section
@@ -121,16 +119,6 @@ void temperature_measurement(u8 filter)
         // Override filter
         sTemp.degrees = (s16) temperature;
     }
-
-    if (sTemp.tempMax==999)
-    	sTemp.tempMax=temperature;
-    if (sTemp.tempMin==999)
-    	sTemp.tempMin=temperature;
-    if (sTemp.tempMax<temperature)
-    	sTemp.tempMax=temperature;
-    if (sTemp.tempMin>temperature)
-    	sTemp.tempMin=temperature;
-
 
     // New data is available --> do display update
     display.flag.update_temperature = 1;
@@ -195,70 +183,70 @@ void mx_temperature(u8 line)
     // Clear display
     clear_display_all();
 
-   	// When using English units, convert internal °C to °F before handing over value to set_value
-   	// function
-   	if (!sys.flag.use_metric_units)
-   	{
-   		// Convert global variable to local variable
-   		temperature = convert_C_to_F(sTemp.degrees);
-   		temperature0 = sTemp.degrees;
-   	}
-   	else
-   	{
-   		// Convert global variable to local variable
-   		temperature = sTemp.degrees;
-   		temperature0 = temperature;
-   	}
-
-   	// Loop values until all are set or user breaks set
-   	while (1)
-   	{
-   	// Idle timeout: exit without saving
-   		if (sys.flag.idle_timeout)
-   			break;
-    		// Button STAR (short): save, then exit
-   		if (button.flag.star)
-   		{
-   			// For English units, convert set °F to °C
-   			if (!sys.flag.use_metric_units)
-   			{
-   				temperature1 = convert_F_to_C(temperature);
-   			}
-   			else
-   			{
-   				temperature1 = temperature;
-   			}
-
-   			// New offset is difference between old and new value
-   			offset = temperature1 - temperature0;
-   			sTemp.offset += offset;
-
-   			// Force filter to new value
-   			sTemp.degrees = temperature1;
-
-   			// Set display update flag
-   			display.flag.line2_full_update = 1;
-
-
-   			break;
-   		}
-
-
-
-   		// Set current temperature - offset is set when leaving function
-   		set_value(&temperature, 3, 1, -999, 999, SETVALUE_DISPLAY_VALUE + SETVALUE_DISPLAY_ARROWS,
-   					LCD_SEG_L2_2_0,
-    				display_value);
-    				display_symbol(LCD_SEG_L2_DP, SEG_ON);
-    	// emfanizei to noymero sta 5 teleftaia
-    	//        		LCD_SEG_L2_4_0,
-    	// emfanizei to noymero sta 4 teleftaia
-    	//        		LCD_SEG_L2_3_0,
-
-
-    	// Clear button flags
-    	button.all_flags = 0;
+    // When using English units, convert internal °C to °F before handing over value to set_value
+    // function
+    if (!sys.flag.use_metric_units)
+    {
+        // Convert global variable to local variable
+        temperature = convert_C_to_F(sTemp.degrees);
+        temperature0 = sTemp.degrees;
     }
+    else
+    {
+        // Convert global variable to local variable
+        temperature = sTemp.degrees;
+        temperature0 = temperature;
+    }
+
+    // Loop values until all are set or user breaks set
+    while (1)
+    {
+        // Idle timeout: exit without saving
+        if (sys.flag.idle_timeout)
+            break;
+
+        // Button STAR (short): save, then exit
+        if (button.flag.star)
+        {
+            // For English units, convert set °F to °C
+            if (!sys.flag.use_metric_units)
+            {
+                temperature1 = convert_F_to_C(temperature);
+            }
+            else
+            {
+                temperature1 = temperature;
+            }
+
+            // New offset is difference between old and new value
+            offset = temperature1 - temperature0;
+            sTemp.offset += offset;
+
+            // Force filter to new value
+            sTemp.degrees = temperature1;
+
+            // Set display update flag
+            display.flag.line1_full_update = 1;
+
+            break;
+        }
+
+        // Display °C or °F depending on unit system
+        if (sys.flag.use_metric_units)
+            display_char(LCD_SEG_L1_0, 'C', SEG_ON);
+        else
+            display_char(LCD_SEG_L1_0, 'F', SEG_ON);
+        display_symbol(LCD_SEG_L1_DP1, SEG_ON);
+        display_symbol(LCD_UNIT_L1_DEGREE, SEG_ON);
+
+        // Set current temperature - offset is set when leaving function
+        set_value(&temperature, 3, 1, -999, 999, SETVALUE_DISPLAY_VALUE + SETVALUE_DISPLAY_ARROWS,
+                  LCD_SEG_L1_3_1,
+                  display_value);
+    }
+
+    // Clear button flags
+    button.all_flags = 0;
 }
 
 // *************************************************************************************************
@@ -279,126 +267,66 @@ void display_temperature(u8 line, u8 update)
         // Menu item is visible
         sTemp.state = MENU_ITEM_VISIBLE;
 
+        // Display °C / °F
+        display_symbol(LCD_SEG_L1_DP1, SEG_ON);
+        display_symbol(LCD_UNIT_L1_DEGREE, SEG_ON);
+        if (sys.flag.use_metric_units)
+            display_char(LCD_SEG_L1_0, 'C', SEG_ON);
+        else
+            display_char(LCD_SEG_L1_0, 'F', SEG_ON);
 
         // Perform one temperature measurement with disabled filter
         temperature_measurement(FILTER_OFF);
 
         // Display temperature
-        display_temperature(LINE2, DISPLAY_LINE_UPDATE_PARTIAL);
+        display_temperature(LINE1, DISPLAY_LINE_UPDATE_PARTIAL);
     }
     else if (update == DISPLAY_LINE_UPDATE_PARTIAL)
     {
-    	if (sTemp.display == DISPLAY_DEFAULT_VIEW)
-    	{
-    		// When using English units, convert °C to °F (temp*1.8+32)
-    		if (!sys.flag.use_metric_units)
-    		{
-    			temperature = convert_C_to_F(sTemp.degrees);
-    		}
-    		else
-    		{
-    			temperature = sTemp.degrees;
-    		}
+        // When using English units, convert °C to °F (temp*1.8+32)
+        if (!sys.flag.use_metric_units)
+        {
+            temperature = convert_C_to_F(sTemp.degrees);
+        }
+        else
+        {
+            temperature = sTemp.degrees;
+        }
 
-    		// Indicate temperature sign through arrow up/down icon
-    		if (temperature < 0)
-    		{
-    			// Convert negative to positive number
-    			temperature = ~temperature;
-    			temperature += 1;
+        // Indicate temperature sign through arrow up/down icon
+        if (temperature < 0)
+        {
+            // Convert negative to positive number
+            temperature = ~temperature;
+            temperature += 1;
 
-    			display_symbol(LCD_SYMB_ARROW_UP, SEG_OFF);
-    			display_symbol(LCD_SYMB_ARROW_DOWN, SEG_ON);
-    		}
-    		else                    // Temperature is >= 0
-    		{
-    			display_symbol(LCD_SYMB_ARROW_UP, SEG_ON);
-    			display_symbol(LCD_SYMB_ARROW_DOWN, SEG_OFF);
-    		}
+            display_symbol(LCD_SYMB_ARROW_UP, SEG_OFF);
+            display_symbol(LCD_SYMB_ARROW_DOWN, SEG_ON);
+        }
+        else                    // Temperature is >= 0
+        {
+            display_symbol(LCD_SYMB_ARROW_UP, SEG_ON);
+            display_symbol(LCD_SYMB_ARROW_DOWN, SEG_OFF);
+        }
 
-    		// Limit min/max temperature to +/- 99.9 °C / °F
-    		if (temperature > 999)
-    			temperature = 999;
+        // Limit min/max temperature to +/- 99.9 °C / °F
+        if (temperature > 999)
+            temperature = 999;
 
-
-
-    		// Display result in xx.x format
-    		str = int_to_array(temperature, 3, 1);
-    		display_chars(LCD_SEG_L2_3_0, str, SEG_ON);
-    		// Display °C / °F
-    		display_symbol(LCD_SEG_L2_DP, SEG_ON);
-    		//        display_symbol(LCD_UNIT_L1_DEGREE, SEG_ON);
-    		if (sys.flag.use_metric_units)
-    			display_char(LCD_SEG_L2_0, 'C', SEG_ON);
-    		else
-    			display_char(LCD_SEG_L2_0, 'F', SEG_ON);
-
-    	}
-    	else
-    		if (sTemp.display == DISPLAY_ALTERNATIVE_VIEW)
-    		{
-    			str = int_to_array(sTemp.tempMax,3,1);
-   	    		display_chars(LCD_SEG_L2_3_0, str, SEG_ON);
-   	    		// Display °C / °F
-   	    		display_symbol(LCD_SEG_L2_DP, SEG_ON);
-   	    		//        display_symbol(LCD_UNIT_L1_DEGREE, SEG_ON);
-   	    		if (sys.flag.use_metric_units)
-   	    			display_char(LCD_SEG_L2_0, 'C', SEG_ON);
-   	    		else
-   	    			display_char(LCD_SEG_L2_0, 'F', SEG_ON);
-    			display_symbol(LCD_SYMB_ARROW_UP, SEG_ON);
-    			display_symbol(LCD_SYMB_ARROW_DOWN, SEG_OFF);
-    		}
-    		else
-        		if (sTemp.display == DISPLAY_ALTERNATIVE_VIEW_2)
-        		{
-
-        			str = int_to_array(sTemp.tempMin,3,1);
-       	    		display_chars(LCD_SEG_L2_3_0, str, SEG_ON);
-       	    		// Display °C / °F
-       	    		display_symbol(LCD_SEG_L2_DP, SEG_ON);
-       	    		//        display_symbol(LCD_UNIT_L1_DEGREE, SEG_ON);
-       	    		if (sys.flag.use_metric_units)
-       	    			display_char(LCD_SEG_L2_0, 'C', SEG_ON);
-       	    		else
-       	    			display_char(LCD_SEG_L2_0, 'F', SEG_ON);
-        			display_symbol(LCD_SYMB_ARROW_UP, SEG_OFF);
-        			display_symbol(LCD_SYMB_ARROW_DOWN, SEG_ON);
-        		}
+        // Display result in xx.x format
+        str = int_to_array(temperature, 3, 1);
+        display_chars(LCD_SEG_L1_3_1, str, SEG_ON);
     }
-    else
-    	if (update == DISPLAY_LINE_CLEAR)
-    	{
-    		sTemp.display = DISPLAY_DEFAULT_VIEW;
-    		// Menu item is not visible
-    		sTemp.state = MENU_ITEM_NOT_VISIBLE;
+    else if (update == DISPLAY_LINE_CLEAR)
+    {
+        // Menu item is not visible
+        sTemp.state = MENU_ITEM_NOT_VISIBLE;
 
-    		// Clean up function-specific segments before leaving function
-    		display_symbol(LCD_SYMB_ARROW_UP, SEG_OFF);
-    		display_symbol(LCD_SYMB_ARROW_DOWN, SEG_OFF);
-    		//        display_symbol(LCD_UNIT_L1_DEGREE, SEG_OFF);
-    		display_symbol(LCD_SEG_L2_DP, SEG_OFF);
-    	}
+        // Clean up function-specific segments before leaving function
+        display_symbol(LCD_SYMB_ARROW_UP, SEG_OFF);
+        display_symbol(LCD_SYMB_ARROW_DOWN, SEG_OFF);
+        display_symbol(LCD_UNIT_L1_DEGREE, SEG_OFF);
+        display_symbol(LCD_SEG_L1_DP1, SEG_OFF);
+    }
 }
 
-//*************************************************************************************************
-// @fn          sx_temperature
-// @brief       Temperature user routine. Toggles view between Temperature, Max, Min.
-// @param       line            LINE1, LINE2
-// @return      none
-// *************************************************************************************************
-//void sx_date(u8 line)
-//{
-//    // Toggle display items
-//    if (sDate.display == DISPLAY_DEFAULT_VIEW)
-//        sDate.display = DISPLAY_ALTERNATIVE_VIEW;
-//    else
-//        sDate.display = DISPLAY_DEFAULT_VIEW;
-//}
-void sx_temperature(u8 line)
-{
-    // Toggle display items
-    if (sTemp.display == DISPLAY_DEFAULT_VIEW) { sTemp.display = DISPLAY_ALTERNATIVE_VIEW; }
-    else if (sTemp.display == DISPLAY_ALTERNATIVE_VIEW  ) { sTemp.display = DISPLAY_ALTERNATIVE_VIEW_2; }
-    else { sTemp.display = DISPLAY_DEFAULT_VIEW; }
-}
